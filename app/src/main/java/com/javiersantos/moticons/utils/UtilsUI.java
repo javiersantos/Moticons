@@ -19,6 +19,7 @@ import com.mikepenz.materialdrawer.accountswitcher.AccountHeader;
 import com.mikepenz.materialdrawer.accountswitcher.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
+import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
 import java.util.Calendar;
@@ -52,7 +53,9 @@ public class UtilsUI {
                         new PrimaryDrawerItem().withName(context.getResources().getString(R.string.action_positive)).withIcon(FontAwesome.Icon.faw_thumbs_up).withBadge("(/^▽^)/"),
                         new PrimaryDrawerItem().withName(context.getResources().getString(R.string.action_negative)).withIcon(FontAwesome.Icon.faw_thumbs_down).withBadge("(>_<)"),
                         new PrimaryDrawerItem().withName(context.getResources().getString(R.string.action_funny)).withIcon(FontAwesome.Icon.faw_child).withBadge("¯\\_(ツ)_/¯"),
-                        new PrimaryDrawerItem().withName(context.getResources().getString(R.string.action_animal)).withIcon(FontAwesome.Icon.faw_paw).withBadge("∪･ω･∪")
+                        new PrimaryDrawerItem().withName(context.getResources().getString(R.string.action_animal)).withIcon(FontAwesome.Icon.faw_paw).withBadge("∪･ω･∪"),
+                        new DividerDrawerItem(),
+                        new SecondaryDrawerItem().withName(context.getResources().getString(R.string.action_about)).withCheckable(false)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -72,6 +75,9 @@ public class UtilsUI {
                                 break;
                             case 5:
                                 recyclerView.setAdapter(moticonAnimalsAdapter);
+                                break;
+                            case 7:
+
                                 break;
                             default:
                                 break;

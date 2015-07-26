@@ -9,6 +9,7 @@
     <string name="action_negative">Negative</string>
     <string name="action_funny">Funny</string>
     <string name="action_animal">Animals</string>
+    <string name="action_about">About</string>
 
     <!-- Labels -->
     <string name="copied_clipboard">%s copied to clipboard</string>
