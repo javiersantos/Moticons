@@ -16,6 +16,7 @@ public class AppPreferences {
     private SharedPreferences.Editor secureEditor;
     private Context context;
 
+    public static final String KeyFirstRun = "prefFirstRun";
     public static final String KeyMoticoins = "prefMoticoins";
     public static final String KeyMoticonTimes = "prefMoticonTimes";
     public static final String KeyMoticonFavorites = "prefMoticonFavorites";
@@ -27,6 +28,15 @@ public class AppPreferences {
         this.editor = sharedPreferences.edit();
         this.secureEditor = secureSharedPreferences.edit();
         this.context = context;
+    }
+
+    public Boolean getFirstRun() {
+        return sharedPreferences.getBoolean(KeyFirstRun, true);
+    }
+
+    public void setFirstRun(Boolean res) {
+        editor.putBoolean(KeyFirstRun, res);
+        editor.commit();
     }
 
     public Integer getMoticoins() {

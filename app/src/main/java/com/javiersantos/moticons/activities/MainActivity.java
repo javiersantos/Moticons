@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         this.appPreferences = MoticonsApplication.getAppPreferences();
 
         initUI();
+        isFirstRun();
 
         recyclerView = (RecyclerView) findViewById(R.id.moticonList);
         //swipyRefreshLayout = (SwipyRefreshLayout) findViewById(R.id.pull_to_refresh);
@@ -108,6 +109,13 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             this.toolbar.setElevation(20);
+        }
+    }
+
+    private void isFirstRun() {
+        if (appPreferences.getFirstRun()) {
+            startActivity(new Intent(context, IntroActivity.class));
+            finish();
         }
     }
 

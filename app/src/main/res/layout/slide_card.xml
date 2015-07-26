@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    android:layout_weight="10"
+    android:id="@+id/main">
+
+    <TextView
+        android:id="@+id/slide_title"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingTop="20dp"
+        android:paddingLeft="32dp"
+        android:layout_weight="2"
+        android:textColor="#ffffff"
+        android:paddingRight="32dp"
+        android:textSize="28sp" />
+    <TextView
+        android:id="@+id/slide_description"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="3.70"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:paddingLeft="64dp"
+        android:paddingRight="64dp"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="5">
+
+        <android.support.v7.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/slide_card"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_margin="20dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/left"
+                    android:text="@string/action_funny"
+                    android:textColor="@color/md_white_1000"
+                    android:textSize="16dp"
+                    android:layout_alignParentLeft="true" />
+                <TextView
+                    android:id="@+id/slide_card_label"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/right"
+                    android:textColor="@color/md_white_1000"
+                    android:text="@string/slide_awesome"
+                    android:textSize="16dp"
+                    android:layout_alignParentRight="true" />
+                <TextView
+                    android:id="@+id/slide_card_moticon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¯\\_(ツ)_/¯"
+                    android:shadowColor="@color/secondary_text"
+                    android:shadowDx="-1"
+                    android:shadowDy="-1"
+                    android:shadowRadius="1"
+                    android:textSize="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="64dp" />
+</LinearLayout>

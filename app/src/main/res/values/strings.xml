@@ -36,6 +36,21 @@
     <string name="button_unlock">Unlock now</string>
     <string name="button_later">Maybe later</string>
     <string name="button_moticoins_shop">Get some Moticoins</string>
+    <string name="button_exit">Exit</string>
+    <string name="button_continue">Continue with the guide</string>
+
+    <!-- Slides -->
+    <string name="slide_1">Welcome! This is a Moticon</string>
+    <string name="slide_1_description">To use this Moticon is as simple as tapping the card.\n\nLet\'s try and paste it where you want!</string>
+    <string name="slide_2">You can also share a Moticon directly</string>
+    <string name="slide_2_description">Try doing a long tap on the card. You should be able to share it to Telegram, WhatsApp, Twitter, etc.</string>
+    <string name="slide_3">Some Moticons need to be unlocked</string>
+    <string name="slide_3_description">There are some Moticons that need Moticoins to be unlocked.\n\nTry with this example. Don\'t worry, it\'s free!</string>
+    <string name="slide_4">You\'re ready to start!</string>
+    <string name="slide_4_description">The Moticon community wish you a warm welcome.\n\nWe\'ve also added 50 Moticoins to your profile as a gift.\n\nEnjoy and don\'t forget to use your Moticoins to unlock new Moticons!</string>
+    <string name="slide_awesome">Awesome!</string>
+    <string name="slide_exit">Are you sure?</string>
+    <string name="slide_exit_description">You are about to close the initial guide to start using Moticons. We have a special gift at the end if you finish it. Do you want to continue with the initial guide?</string>
 
     <!-- Toasts -->
     <string name="tap_exit">Tap again to close the app</string>
