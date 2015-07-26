@@ -7,6 +7,6 @@
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#727272</color>
     <color name="icons">#FFFFFF</color>
-    <color name="divider">#B6B6B6</color>
+    <color name="divider">#ECEFF1</color>
     <color name="transparent">#00000000</color>
 </resources>
