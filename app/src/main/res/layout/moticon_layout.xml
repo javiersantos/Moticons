@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/moticon_card"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_margin="5dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/moticon_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/left"
+                android:textColor="@color/md_white_1000"
+                android:textSize="16dp"
+                android:layout_alignParentLeft="true" />
+            <TextView
+                android:id="@+id/moticon_times"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/right"
+                android:textColor="@color/md_white_1000"
+                android:textSize="16dp"
+                android:layout_alignParentRight="true" />
+            <TextView
+                android:id="@+id/moticon_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Moticon"
+                android:shadowColor="@color/secondary_text"
+                android:shadowDx="-1"
+                android:shadowDy="-1"
+                android:shadowRadius="1"
+                android:textSize="30dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

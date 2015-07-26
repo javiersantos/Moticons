@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Moticons</string>
+
+    <!-- Actions -->
+    <string name="action_settings">Settings</string>
+    <string name="action_share">Share %s with&#8230;</string>
+    <string name="action_favorites">Favorites</string>
+    <string name="action_positive">Positive</string>
+    <string name="action_negative">Negative</string>
+    <string name="action_funny">Funny</string>
+    <string name="action_animal">Animals</string>
+
+    <!-- Labels -->
+    <string name="copied_clipboard">%s copied to clipboard</string>
+    <string name="moticoins">Moticoins</string>
+    <string name="moticoins_value">%s Moticoins</string>
+    <string name="moticon_unlock_amount">Unlock using %s Moticoins</string>
+    <string name="moticon_unlock">Buy Moticon using Moticoins</string>
+    <string name="moticon_unlock_description">You have %1$s Moticoins. Do you want to spend %2$s Moticoins to unlock the %3$s Moticon?</string>
+    <string name="moticon_unlocked">%s is yours!</string>
+    <string name="moticon_unlocked_description">You\'re now allowed to use this Moticon where you want. The Moticon community will be proud of you!</string>
+    <string name="moticon_no_moticoins">Ups&#8230; ⊙﹏⊙</string>
+    <string name="moticon_no_moticoins_description">You don\'t have enough Moticoins to buy this Moticon.</string>
+    <string name="moticoins_shop">Moticoins Shop</string>
+    <string name="moticoins_ad">Watch a video</string>
+    <string name="moticoins_ad_description">Get 6 Moticoins to unlock Moticons</string>
+    <string name="moticoins_ad_not_available">There aren\'t videos at this time. Please try later.</string>
+    <string name="moticoins_remove_ads">Remove ads</string>
+    <string name="moticoins_unlock_moticons">Unlock all Moticons</string>
+    <string name="search">Search</string>
+    <string name="search_hint">Search by keywords&#8230;</string>
+    <string name="search_noresults">No results were found for your search</string>
+
+    <!-- Buttons -->
+    <string name="button_unlock">Unlock now</string>
+    <string name="button_later">Maybe later</string>
+    <string name="button_moticoins_shop">Get some Moticoins</string>
+
+    <!-- Toasts -->
+    <string name="tap_exit">Tap again to close the app</string>
+</resources>
