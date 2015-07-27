@@ -123,7 +123,7 @@ public class MoticoinsActivity extends AppCompatActivity {
         this.toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle(R.string.moticoins_shop);
+            getSupportActionBar().setTitle(R.string.moticoins);
         }
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,6 +157,7 @@ public class MoticoinsActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        overridePendingTransition(R.anim.fade_forward, R.anim.slide_out_right);
     }
 
 }

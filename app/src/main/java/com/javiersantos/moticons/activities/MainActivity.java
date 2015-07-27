@@ -115,6 +115,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     private void isFirstRun() {
         if (appPreferences.getFirstRun()) {
             startActivity(new Intent(context, IntroActivity.class));
+            overridePendingTransition(R.anim.slide_in_right, R.anim.fade_back);
             finish();
         }
     }
@@ -249,9 +250,11 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         switch (item.getItemId()) {
             case R.id.action_moticoins:
                 startActivity(new Intent(context, MoticoinsActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.fade_back);
                 break;
             case R.id.action_moticoins_icon:
                 startActivity(new Intent(context, MoticoinsActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.fade_back);
                 break;
         }
         return super.onOptionsItemSelected(item);

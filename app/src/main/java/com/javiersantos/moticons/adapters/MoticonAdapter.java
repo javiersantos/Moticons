@@ -138,6 +138,7 @@ public class MoticonAdapter extends RecyclerView.Adapter<MoticonAdapter.MoticonV
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 context.startActivity(new Intent(context, MoticoinsActivity.class));
+                                activity.overridePendingTransition(R.anim.slide_in_right, R.anim.fade_back);
                             }
                         });
                         noMoticoinsDialog.setNegativeButton(context.getResources().getString(R.string.button_later), new DialogInterface.OnClickListener() {
