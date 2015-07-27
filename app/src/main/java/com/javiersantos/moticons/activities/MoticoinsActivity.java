@@ -128,6 +128,7 @@ public class MoticoinsActivity extends AppCompatActivity {
         interstitialAd.setAdListener(new AdListener() {
             @Override
             public void onAdClosed() {
+                super.onAdClosed();
                 appPreferences.setMoticoins(appPreferences.getMoticoins() + MOTICOINS_VIDEO);
                 moticoins_amount.setText(appPreferences.getMoticoins().toString());
                 MainActivity.updateMoticoins(context);
@@ -136,11 +137,13 @@ public class MoticoinsActivity extends AppCompatActivity {
 
             @Override
             public void onAdLoaded() {
+                super.onAdLoaded();
                 adAvailable(true);
             }
 
             @Override
             public void onAdFailedToLoad(int errorCode) {
+                super.onAdFailedToLoad(errorCode);
                 adAvailable(false);
             }
         });
@@ -176,7 +179,7 @@ public class MoticoinsActivity extends AppCompatActivity {
 
     private void requestNewInterstitial() {
         AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice("1FD6637CCC5A1FF3544756CF60A5C035")
+                .addTestDevice(MoticonsApplication.getTestDevice())
                 .build();
 
         show_ad.setVisibility(View.GONE);

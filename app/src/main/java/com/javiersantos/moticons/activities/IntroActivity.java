@@ -1,12 +1,9 @@
 package com.javiersantos.moticons.activities;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 
-import com.github.paolorotolo.appintro.AppIntro;
 import com.github.paolorotolo.appintro.AppIntro2;
 import com.javiersantos.moticons.MoticonsApplication;
 import com.javiersantos.moticons.slides.FirstSlide;
@@ -14,9 +11,6 @@ import com.javiersantos.moticons.slides.FourthSlide;
 import com.javiersantos.moticons.slides.SecondSlide;
 import com.javiersantos.moticons.slides.ThirdSlide;
 import com.javiersantos.moticons.utils.AppPreferences;
-import com.javiersantos.moticons.utils.UtilsDialog;
-
-import com.javiersantos.moticons.R;
 
 public class IntroActivity extends AppIntro2 {
     private AppPreferences appPreferences;

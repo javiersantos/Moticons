@@ -25,6 +25,7 @@
     <string name="moticon_unlocked">%s is yours!</string>
     <string name="moticon_unlocked_description">You\'re now allowed to use this Moticon where you want. The Moticon community will be proud of you!</string>
     <string name="moticon_no_moticoins_description">You don\'t have enough Moticoins to unlock this Moticon.</string>
+    <string name="admob_remove">Remove ads</string>
     <string name="moticoins_ad">Watch a video</string>
     <string name="moticoins_ad_description">Get 6 Moticoins to unlock Moticons and other features</string>
     <string name="moticoins_ad_not_available">There aren\'t videos at this time. Please try again later.</string>

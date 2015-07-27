@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,9 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.javiersantos.moticons.Moticon;
 import com.javiersantos.moticons.MoticonsApplication;
 import com.javiersantos.moticons.R;
@@ -56,9 +60,12 @@ public class MoticonAdapter extends RecyclerView.Adapter<MoticonAdapter.MoticonV
 
     @Override
     public void onBindViewHolder(final MoticonViewHolder moticonViewHolder, int i) {
+        Log.i("Position ", new Integer(i).toString());
         final Moticon moticon = moticonList.get(i);
         moticonViewHolder.vMoticonName.setText(moticon.getMoticon());
         moticonViewHolder.vMoticonCategory.setText(UtilsUI.convertCategoryToString(context, moticon));
+
+        includeAdmob(moticonViewHolder, moticon);
 
         // Moticon is Unlocked
         if (moticon.getUnlocked()) {
@@ -153,6 +160,35 @@ public class MoticonAdapter extends RecyclerView.Adapter<MoticonAdapter.MoticonV
 
     }
 
+    private void includeAdmob(final MoticonViewHolder moticonViewHolder, Moticon moticon) {
+        if (!appPreferences.getRemovedAds()) {
+            List<Integer> tempAdList = UtilsMoticons.retrieveAdMoticon(moticonList);
+            if (tempAdList.contains(moticon.getId())) {
+                AdRequest adRequest = new AdRequest.Builder().addTestDevice(MoticonsApplication.getTestDevice()).build();
+
+                moticonViewHolder.vAdRemove.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        context.startActivity(new Intent(context, MoticoinsActivity.class));
+                        activity.overridePendingTransition(R.anim.slide_in_right, R.anim.fade_back);
+                    }
+                });
+                moticonViewHolder.vAd.loadAd(adRequest);
+                moticonViewHolder.vAd.setAdListener(new AdListener() {
+                    @Override
+                    public void onAdLoaded() {
+                        super.onAdLoaded();
+                        moticonViewHolder.vAd.setVisibility(View.VISIBLE);
+                        moticonViewHolder.vAdCard.setVisibility(View.VISIBLE);
+                    }
+                });
+            } else {
+                moticonViewHolder.vAd.setVisibility(View.GONE);
+                moticonViewHolder.vAdCard.setVisibility(View.GONE);
+            }
+        }
+    }
+
     public Filter getFilter() {
         return new Filter() {
             @Override
@@ -201,13 +237,19 @@ public class MoticonAdapter extends RecyclerView.Adapter<MoticonAdapter.MoticonV
         protected TextView vMoticonTimes;
         protected TextView vMoticonCategory;
         protected CardView vMoticonCard;
+        protected CardView vAdCard;
+        protected AdView vAd;
+        protected TextView vAdRemove;
 
         public MoticonViewHolder(View v) {
             super(v);
             vMoticonName = (TextView) v.findViewById(R.id.moticon_name);
             vMoticonTimes = (TextView) v.findViewById(R.id.moticon_times);
             vMoticonCategory = (TextView) v.findViewById(R.id.moticon_category);
-            vMoticonCard = (CardView) v.findViewById(R.id.moticon_card);
+            vMoticonCard = (CardView) v.findViewById(R.id.card_moticon);
+            vAdCard = (CardView) v.findViewById(R.id.card_ad);
+            vAd = (AdView) v.findViewById(R.id.adView);
+            vAdRemove = (TextView) v.findViewById(R.id.ad_remove);
         }
     }
 

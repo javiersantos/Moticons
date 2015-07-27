@@ -160,13 +160,6 @@ public class UtilsMoticons {
                 Log.i("MOTICON DUPLICATED! -> ", tempList.get(i));
             }
         }
-
-        // Retrieve total of Moticons moticoins
-        Double moticoins = 0.;
-        for (Moticon moticon : moticonList) {
-            moticoins += moticon.getMoticoins();
-        }
-        Log.i("TOTAL MOTICOINS -> ", retrieveMoticoins(moticonList).toString());
     }
 
     private static void checkTimes(List<Moticon> moticonList) {
@@ -268,6 +261,17 @@ public class UtilsMoticons {
         }
         moticoins = moticoins * 0.85;
         return moticoins.intValue();
+    }
+
+    public static List<Integer> retrieveAdMoticon(List<Moticon> moticonList) {
+        List<Integer> admobMoticonList = new ArrayList<>();
+        for (int i = 0; i < moticonList.size()-1; i++) {
+            if (i%20 == 0) {
+                admobMoticonList.add(moticonList.get(i).getId());
+            }
+        }
+
+        return admobMoticonList;
     }
 
 }

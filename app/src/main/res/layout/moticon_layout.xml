@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
     <android.support.v7.widget.CardView
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/moticon_card"
+        android:id="@+id/card_moticon"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:foreground="?android:attr/selectableItemBackground"
@@ -46,5 +46,9 @@
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
+
+    <include
+        android:id="@+id/card_ad"
+        layout="@layout/ad_layout" />
 
 </RelativeLayout>

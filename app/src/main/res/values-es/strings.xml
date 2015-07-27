@@ -24,6 +24,7 @@
     <string name="moticoins_ad">Ver un vídeo</string>
     <string name="moticoins_ad_description">Consigue 6 Moticoins para desbloquear Moticons y otras funcionalidades</string>
     <string name="moticoins_ad_not_available">No hay vídeos en estos momentos. Por favor inténtalo luego.</string>
+    <string name="admob_remove">Eliminar publicidad</string>
     <string name="moticoins_remove_ads">Eliminar publicidad</string>
     <string name="moticoins_unlock_moticons">Desbloquear todos los Moticons</string>
     <string name="search">Buscar</string>
