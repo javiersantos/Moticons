@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_description">Comparte emoticones Japoneses sencillamente</string>
+
+    <!-- Actions -->
+    <string name="action_settings">Ajustes</string>
+    <string name="action_share">Compartir %s con&#8230;</string>
+    <string name="action_favorites">Favoritos</string>
+    <string name="action_positive">Positivos</string>
+    <string name="action_negative">Negativos</string>
+    <string name="action_funny">Divertidos</string>
+    <string name="action_animal">Animales</string>
+    <string name="action_about">Acerca de</string>
+
+    <!-- Labels -->
+    <string name="unlocked">¡Desbloqueado!</string>
+    <string name="copied_clipboard">%s copiado al portapapeles</string>
+    <string name="moticon_unlock_amount">Desbloquear usando %d Moticoins</string>
+    <string name="moticon_unlock">Comprar Moticon usando Moticoins</string>
+    <string name="moticon_unlock_description">Tienes %1$d Moticoins. ¿Quiéres gastar %2$d Moticoins para desbloquear %3$s?</string>
+    <string name="moticon_unlocked">¡%s es tuyo!</string>
+    <string name="moticon_unlocked_description">Ahora puedes usar este Moticon donde quieras. ¡La comunidad Moticon estará orgulloso de ti!</string>
+    <string name="moticon_no_moticoins_description">No tienes suficientes Moticoins para desbloquear este Moticon.</string>
+    <string name="moticoins_ad">Ver un vídeo</string>
+    <string name="moticoins_ad_description">Consigue 6 Moticoins para desbloquear Moticons y otras funcionalidades</string>
+    <string name="moticoins_ad_not_available">No hay vídeos en estos momentos. Por favor inténtalo luego.</string>
+    <string name="moticoins_remove_ads">Eliminar publicidad</string>
+    <string name="moticoins_unlock_moticons">Desbloquear todos los Moticons</string>
+    <string name="search">Buscar</string>
+    <string name="search_hint">Buscar por palabras claves&#8230;</string>
+    <string name="search_noresults">No hay resultados para esa búsqueda</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_wrong_id_description">¡Oye! Parece que estás haciendo trampa. Hemos reseteado todas las configuraciones a sus valores originales.</string>
+
+    <!-- About -->
+    <string name="about_1_description">Desarrollador</string>
+    <string name="about_2_description">Icono</string>
+
+    <!-- Buttons -->
+    <string name="button_unlock">Desbloquear ahora</string>
+    <string name="button_later">Quizás luego</string>
+    <string name="button_moticoins_shop">Conseguir algunos Moticoins</string>
+    <string name="button_exit">Salir</string>
+    <string name="button_continue">Continuar con la introducción</string>
+
+    <!-- Slides -->
+    <string name="slide_1">¡Bienvenido! Ésto es un Moticon</string>
+    <string name="slide_1_description">Usarlo es tan simple como pulsar en la tarjeta.\n\n¡Inténtalo y pégalo donde quieras!</string>
+    <string name="slide_2">Compartir un Moticon directamente</string>
+    <string name="slide_2_description">Mantén pulsado la tarjeta durante unos segundos.\n\nPodrás compartirlo en Telegram, WhatsApp, Twitter, etc.</string>
+    <string name="slide_3">Algunos necesitan ser desbloqueados</string>
+    <string name="slide_3_description">Hay algunos Moticons que necesitan Moticoins para ser desbloqueados.\n\nInténtalo con este ejemplo. ¡No te preocupes, es gratis!</string>
+    <string name="slide_4">¡Ya estás preparado para empezar!</string>
+    <string name="slide_4_description">La comunidad Moticon te da la bienvenida. Hemos añadido %d Moticoins a tu perfil como regalo.\n\n¡Disfruta y no te olvides de usar los Moticoins para desbloquear nuevos Moticons!</string>
+    <string name="slide_admob">Usando Moticons aceptas usar identificadores de dispositivo para personalizar el contenido y los anuncios. Además, compartimos estos identificadores y otra información sobre su dispositivo con Google AdSense.</string>
+    <string name="slide_awesome">¡Genial!</string>
+    <string name="slide_exit">¿Estás seguro?</string>
+    <string name="slide_exit_description">Estás a un paso de cerrar la introducción para empezar a usar Moticons. Tenemos un regalo especial al final si lo terminas. ¿Quiéres continuar con la introducción?</string>
+
+    <!-- Toasts and Snackbar -->
+    <string name="tap_exit">Pulsa de nuevo para salir</string>
+    <string name="snackbar_bought">¡Acabas de desbloquearlo!</string>
+    <string name="snackbar_not_bought">No tienes suficientes Moticoins para desbloquear la funcionalidad</string>
+</resources>

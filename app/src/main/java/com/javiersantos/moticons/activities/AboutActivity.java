@@ -44,7 +44,8 @@ public class AboutActivity extends AppCompatActivity {
         CardView card_about_1 = (CardView) findViewById(R.id.card_about_1);
         CardView card_about_2 = (CardView) findViewById(R.id.card_about_2);
 
-        app_name.setText(getResources().getString(R.string.app_name) + " " + UtilsApp.getAppVersionName(getApplicationContext()) + " \"" + getResources().getString(R.string.app_codename) + "\"");
+        //app_name.setText(getResources().getString(R.string.app_name) + " " + UtilsApp.getAppVersionName(getApplicationContext()) + " \"" + getResources().getString(R.string.app_codename) + "\"");
+        app_name.setText(getResources().getString(R.string.app_name) + " " + UtilsApp.getAppVersionName(getApplicationContext()));
 
         card_about_1.setOnClickListener(new View.OnClickListener() {
             @Override

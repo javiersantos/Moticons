@@ -83,13 +83,19 @@
             </RelativeLayout>
 
         </android.support.v7.widget.CardView>
-        <ImageView
-            android:id="@+id/slide_card_icon"
+        <TextView
+            android:id="@+id/slide_admob"
             android:visibility="gone"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="3.70"
             android:layout_gravity="center"
-            android:src="@mipmap/ic_launcher" />
+            android:gravity="center"
+            android:text="@string/slide_admob"
+            android:textColor="#ffffff"
+            android:paddingLeft="64dp"
+            android:paddingRight="64dp"
+            android:textSize="12sp" />
     </LinearLayout>
     <TextView
         android:layout_width="fill_parent"

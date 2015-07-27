@@ -1,7 +1,10 @@
 <resources>
-    <string name="app_name">Moticons</string>
+    <string name="app_name" translatable="false">Moticons</string>
+    <string name="app_codename" translatable="false"></string>
     <string name="app_description">Share Japanese Emoticons made easy</string>
-    <string name="app_codename"></string>
+    <string name="moticoins" translatable="false">Moticoins</string>
+    <string name="moticoins_value" translatable="false">%d Moticoins</string>
+    <string name="moticon_no_moticoins" translatable="false">Ups&#8230; ⊙﹏⊙</string>
 
     <!-- Actions -->
     <string name="action_settings">Settings</string>
@@ -14,24 +17,25 @@
     <string name="action_about">About</string>
 
     <!-- Labels -->
+    <string name="unlocked">Unlocked!</string>
     <string name="copied_clipboard">%s copied to clipboard</string>
-    <string name="moticoins">Moticoins</string>
-    <string name="moticoins_value">%s Moticoins</string>
-    <string name="moticon_unlock_amount">Unlock using %s Moticoins</string>
+    <string name="moticon_unlock_amount">Unlock using %d Moticoins</string>
     <string name="moticon_unlock">Buy Moticon using Moticoins</string>
-    <string name="moticon_unlock_description">You have %1$s Moticoins. Do you want to spend %2$s Moticoins to unlock the %3$s Moticon?</string>
+    <string name="moticon_unlock_description">You have %1$d Moticoins. Do you want to spend %2$d Moticoins to unlock the %3$s Moticon?</string>
     <string name="moticon_unlocked">%s is yours!</string>
     <string name="moticon_unlocked_description">You\'re now allowed to use this Moticon where you want. The Moticon community will be proud of you!</string>
-    <string name="moticon_no_moticoins">Ups&#8230; ⊙﹏⊙</string>
-    <string name="moticon_no_moticoins_description">You don\'t have enough Moticoins to buy this Moticon.</string>
+    <string name="moticon_no_moticoins_description">You don\'t have enough Moticoins to unlock this Moticon.</string>
     <string name="moticoins_ad">Watch a video</string>
-    <string name="moticoins_ad_description">Get 6 Moticoins to unlock Moticons</string>
-    <string name="moticoins_ad_not_available">There aren\'t videos at this time. Please try later.</string>
+    <string name="moticoins_ad_description">Get 6 Moticoins to unlock Moticons and other features</string>
+    <string name="moticoins_ad_not_available">There aren\'t videos at this time. Please try again later.</string>
     <string name="moticoins_remove_ads">Remove ads</string>
     <string name="moticoins_unlock_moticons">Unlock all Moticons</string>
     <string name="search">Search</string>
     <string name="search_hint">Search by keywords&#8230;</string>
     <string name="search_noresults">No results were found for your search</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_wrong_id_description">Hey! It looks like you\'re cheating. We\'ve reset all settings to their original values.</string>
 
     <!-- About -->
     <string name="about_1_description">App Developer</string>
@@ -47,16 +51,19 @@
     <!-- Slides -->
     <string name="slide_1">Welcome! This is a Moticon</string>
     <string name="slide_1_description">To use this Moticon is as simple as tapping the card.\n\nLet\'s try and paste it where you want!</string>
-    <string name="slide_2">You can also share a Moticon directly</string>
+    <string name="slide_2">Share a Moticon directly</string>
     <string name="slide_2_description">Try doing a long tap on the card. You should be able to share it to Telegram, WhatsApp, Twitter, etc.</string>
     <string name="slide_3">Some Moticons need to be unlocked</string>
     <string name="slide_3_description">There are some Moticons that need Moticoins to be unlocked.\n\nTry with this example. Don\'t worry, it\'s free!</string>
     <string name="slide_4">You\'re ready to start!</string>
-    <string name="slide_4_description">The Moticon community wish you a warm welcome.\n\nWe\'ve also added 50 Moticoins to your profile as a gift.\n\nEnjoy and don\'t forget to use your Moticoins to unlock new Moticons!</string>
+    <string name="slide_4_description">The Moticon community wish you a warm welcome. We\'ve also added %d Moticoins to your profile as a gift.\n\nEnjoy and don\'t forget to use your Moticoins to unlock new Moticons!</string>
+    <string name="slide_admob">Using Moticons you allow to use device identifiers to personalise content and ads. We also share such identifiers and other information from your device with Google AdSense.</string>
     <string name="slide_awesome">Awesome!</string>
     <string name="slide_exit">Are you sure?</string>
     <string name="slide_exit_description">You are about to close the initial guide to start using Moticons. We have a special gift at the end if you finish it. Do you want to continue with the initial guide?</string>
 
-    <!-- Toasts -->
+    <!-- Toasts and Snackbar -->
     <string name="tap_exit">Tap again to close the app</string>
+    <string name="snackbar_bought">You have unlocked this feature!</string>
+    <string name="snackbar_not_bought">You don\'t have enough Moticons to unlock this feature</string>
 </resources>

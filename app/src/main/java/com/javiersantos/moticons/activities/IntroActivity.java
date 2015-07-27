@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 
 import com.github.paolorotolo.appintro.AppIntro;
+import com.github.paolorotolo.appintro.AppIntro2;
 import com.javiersantos.moticons.MoticonsApplication;
 import com.javiersantos.moticons.slides.FirstSlide;
 import com.javiersantos.moticons.slides.FourthSlide;
@@ -17,7 +18,7 @@ import com.javiersantos.moticons.utils.UtilsDialog;
 
 import com.javiersantos.moticons.R;
 
-public class IntroActivity extends AppIntro {
+public class IntroActivity extends AppIntro2 {
     private AppPreferences appPreferences;
     private Context context;
 
@@ -31,13 +32,13 @@ public class IntroActivity extends AppIntro {
         addSlide(new ThirdSlide());
         addSlide(new FourthSlide());
 
-        setSeparatorColor(getResources().getColor(R.color.primary_dark));
+        //setSeparatorColor(getResources().getColor(R.color.primary_dark));
 
         setVibrate(true);
         setVibrateIntensity(30);
     }
 
-    @Override
+    /*@Override
     public void onSkipPressed() {
         AlertDialog.Builder exitDialog = UtilsDialog.showDialog(context, context.getResources().getString(R.string.slide_exit), context.getResources().getString(R.string.slide_exit_description));
         exitDialog.setPositiveButton(context.getResources().getString(R.string.button_continue), new DialogInterface.OnClickListener() {
@@ -55,13 +56,13 @@ public class IntroActivity extends AppIntro {
         });
 
         exitDialog.show();
-    }
+    }*/
 
     @Override
     public void onDonePressed() {
         appPreferences.setFirstRun(false);
         if (appPreferences.getMoticoins() == 0 && appPreferences.getMoticonTimes().size() == 0 && appPreferences.getMoticonUnlocked().size() == 0) {
-            appPreferences.setMoticoins(50);
+            appPreferences.setMoticoins(MoticonsApplication.getInitialMoticoins());
         }
         startActivity(new Intent(context, MainActivity.class));
         finish();

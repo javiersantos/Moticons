@@ -47,18 +47,6 @@
             android:layout_height="match_parent"
             android:paddingRight="25dp"
             android:paddingLeft="5dp" />
-        <!--<com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout
-            android:id="@+id/pull_to_refresh"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:direction="top">
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/moticonList"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingRight="25dp"
-                android:paddingLeft="5dp" />
-        </com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout>-->
         <xyz.danoz.recyclerviewfastscroller.vertical.VerticalRecyclerViewFastScroller
             android:id="@+id/fast_scroller"
             android:layout_width="24dp"

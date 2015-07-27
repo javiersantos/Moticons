@@ -2,12 +2,14 @@ package com.javiersantos.moticons.activities;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -19,22 +21,23 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+import android.provider.Settings.Secure;
 
 import com.javiersantos.moticons.Moticon;
 import com.javiersantos.moticons.MoticonsApplication;
 import com.javiersantos.moticons.R;
 import com.javiersantos.moticons.adapters.MoticonAdapter;
 import com.javiersantos.moticons.utils.AppPreferences;
+import com.javiersantos.moticons.utils.UtilsDialog;
 import com.javiersantos.moticons.utils.UtilsMoticons;
 import com.javiersantos.moticons.utils.UtilsUI;
 import com.mikepenz.materialdrawer.Drawer;
-import com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout;
-import com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayoutDirection;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 
 import xyz.danoz.recyclerviewfastscroller.vertical.VerticalRecyclerViewFastScroller;
@@ -45,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     private Toolbar toolbar;
     private Context context;
     private RecyclerView recyclerView;
-    //private SwipyRefreshLayout swipyRefreshLayout;
     private Drawer drawer;
     private MenuItem searchItem;
     private SearchView searchView;
@@ -80,25 +82,41 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         isFirstRun();
 
         recyclerView = (RecyclerView) findViewById(R.id.moticonList);
-        //swipyRefreshLayout = (SwipyRefreshLayout) findViewById(R.id.pull_to_refresh);
         fastScroller = (VerticalRecyclerViewFastScroller) findViewById(R.id.fast_scroller);
         progressWheel = (ProgressWheel) findViewById(R.id.progress);
         noResults = (LinearLayout) findViewById(R.id.noResults);
+
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
 
         fastScroller.setRecyclerView(recyclerView);
         recyclerView.setOnScrollListener(fastScroller.getOnScrollListener());
         progressWheel.setVisibility(View.VISIBLE);
 
-        recyclerView.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(linearLayoutManager);
-
-        //setPullToRefresh(swipyRefreshLayout);
-        drawer = UtilsUI.showNavigationDrawer(context, toolbar, moticonAdapter, moticonPositiveAdapter, moticonNegativeAdapter, moticonFunnyAdapter, moticonAnimalsAdapter, recyclerView);
-
         new getMoticons().execute();
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (!appPreferences.getDeviceID().equals(Secure.getString(context.getContentResolver(), Secure.ANDROID_ID))) {
+            AlertDialog.Builder alertDialog = UtilsDialog.showDialog(context, "ಠ_ಠ", getResources().getString(R.string.dialog_wrong_id_description));
+            alertDialog.setPositiveButton(android.R.string.ok + "..." + " (>_<)", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    appPreferences.setMoticoins(0);
+                    appPreferences.setMoticonUnlocked(new HashSet<String>());
+                    appPreferences.setUnlockAllMoticons(false);
+                    appPreferences.setRemoveAds(false);
+                    updateMoticoins(context);
+                    dialogInterface.dismiss();
+                }
+            });
+
+            alertDialog.show();
+        }
     }
 
     private void initUI() {
@@ -158,17 +176,18 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                 }
             }
 
+            moticonAdapter = new MoticonAdapter(moticonList, context);
+            moticonPositiveAdapter = new MoticonAdapter(moticonPositiveList, context);
+            moticonNegativeAdapter = new MoticonAdapter(moticonNegativeList, context);
+            moticonFunnyAdapter = new MoticonAdapter(moticonFunnyList, context);
+            moticonAnimalsAdapter = new MoticonAdapter(moticonAnimalsList, context);
+
             return null;
         }
 
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            moticonAdapter = new MoticonAdapter(moticonList, context);
-            moticonPositiveAdapter = new MoticonAdapter(moticonPositiveList, context);
-            moticonNegativeAdapter = new MoticonAdapter(moticonNegativeList, context);
-            moticonFunnyAdapter = new MoticonAdapter(moticonFunnyList, context);
-            moticonAnimalsAdapter = new MoticonAdapter(moticonAnimalsList, context);
 
             fastScroller.setVisibility(View.VISIBLE);
             recyclerView.setAdapter(moticonAdapter);
@@ -177,24 +196,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
             drawer = UtilsUI.showNavigationDrawer(context, toolbar, moticonAdapter, moticonPositiveAdapter, moticonNegativeAdapter, moticonFunnyAdapter, moticonAnimalsAdapter, recyclerView);
         }
 
-    }
-
-    private void setPullToRefresh(final SwipyRefreshLayout swipyRefreshLayout) {
-        swipyRefreshLayout.setOnRefreshListener(new SwipyRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh(SwipyRefreshLayoutDirection direction) {
-                switch (direction) {
-                    case TOP:
-                        moticonAdapter.clear();
-                        moticonPositiveAdapter.clear();
-                        moticonNegativeAdapter.clear();
-                        moticonFunnyAdapter.clear();
-                        moticonAnimalsAdapter.clear();
-                        new getMoticons().execute();
-                        break;
-                }
-            }
-        });
     }
 
     @Override
