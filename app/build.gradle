@@ -32,6 +32,7 @@ dependencies {
     compile 'xyz.danoz:recyclerviewfastscroller:0.1.3'
     compile 'com.pnikosis:materialish-progress:1.5'
     compile 'com.github.paolorotolo:appintro:3.1.0'
+    compile 'com.pkmmte.view:circularimageview:1.1'
     compile('com.mikepenz:materialdrawer:3.1.2@aar') {
         transitive = true
     }

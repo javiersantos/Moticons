@@ -34,7 +34,11 @@
         </activity>
         <activity
             android:name=".activities.MoticoinsActivity"
-            android:label="@string/moticoins_shop" >
+            android:label="@string/moticoins" >
+        </activity>
+        <activity
+            android:name=".activities.AboutActivity"
+            android:label="@string/action_about" >
         </activity>
         <activity
             android:name=".activities.IntroActivity"

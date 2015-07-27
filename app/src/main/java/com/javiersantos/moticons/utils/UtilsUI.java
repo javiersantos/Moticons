@@ -2,15 +2,15 @@ package com.javiersantos.moticons.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 
 import com.javiersantos.moticons.Moticon;
-import com.javiersantos.moticons.MoticonCategory;
-import com.javiersantos.moticons.MoticonsApplication;
 import com.javiersantos.moticons.R;
+import com.javiersantos.moticons.activities.AboutActivity;
 import com.javiersantos.moticons.adapters.MoticonAdapter;
 import com.mikepenz.iconics.typeface.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
@@ -25,22 +25,12 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import java.util.Calendar;
 
 public class UtilsUI {
-    private static AppPreferences appPreferences;
-
-    public static Drawer showNavigationDrawer(Context context, Toolbar toolbar, final MoticonAdapter moticonAdapter, final MoticonAdapter moticonPositiveAdapter, final MoticonAdapter moticonNegativeAdapter, final MoticonAdapter moticonFunnyAdapter, final MoticonAdapter moticonAnimalsAdapter, final RecyclerView recyclerView) {
+    public static Drawer showNavigationDrawer(final Context context, Toolbar toolbar, final MoticonAdapter moticonAdapter, final MoticonAdapter moticonPositiveAdapter, final MoticonAdapter moticonNegativeAdapter, final MoticonAdapter moticonFunnyAdapter, final MoticonAdapter moticonAnimalsAdapter, final RecyclerView recyclerView) {
         Activity activity = (Activity) context;
-        int header;
-        appPreferences = MoticonsApplication.getAppPreferences();
-
-        if (getDayOrNight() == 1) {
-            header = R.drawable.header_day;
-        } else {
-            header = R.drawable.header_night;
-        }
 
         AccountHeader headerResult = new AccountHeaderBuilder()
                 .withActivity(activity)
-                .withHeaderBackground(header)
+                .withHeaderBackground(R.drawable.header)
                 .build();
         return new DrawerBuilder()
                 .withActivity(activity)
@@ -48,7 +38,7 @@ public class UtilsUI {
                 .withAccountHeader(headerResult)
                 .withStatusBarColor(context.getResources().getColor(R.color.primary_dark))
                 .addDrawerItems(
-                        new PrimaryDrawerItem().withName(context.getResources().getString(R.string.app_name)),
+                        new PrimaryDrawerItem().withName(context.getResources().getString(R.string.app_name)).withIcon(R.mipmap.ic_launcher),
                         new DividerDrawerItem(),
                         new PrimaryDrawerItem().withName(context.getResources().getString(R.string.action_positive)).withIcon(FontAwesome.Icon.faw_thumbs_up).withBadge("(/^▽^)/"),
                         new PrimaryDrawerItem().withName(context.getResources().getString(R.string.action_negative)).withIcon(FontAwesome.Icon.faw_thumbs_down).withBadge("(>_<)"),
@@ -77,7 +67,7 @@ public class UtilsUI {
                                 recyclerView.setAdapter(moticonAnimalsAdapter);
                                 break;
                             case 7:
-
+                                context.startActivity(new Intent(context, AboutActivity.class));
                                 break;
                             default:
                                 break;

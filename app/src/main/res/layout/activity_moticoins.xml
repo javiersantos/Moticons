@@ -87,73 +87,78 @@
             android:layout_height="1dp"
             android:background="@color/divider" />
     </RelativeLayout>
-    <RelativeLayout
-        android:id="@+id/relativeLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/divider"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp">
-        <android.support.v7.widget.CardView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/remove_ads"
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relativeLayout1">
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_margin="5dp">
-            <RelativeLayout
+            android:layout_height="match_parent"
+            android:layout_below="@id/divider"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp">
+            <android.support.v7.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/remove_ads"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/remove_ads_moticoins"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:background="@drawable/right"
-                    android:textColor="@color/md_white_1000"
-                    android:textSize="16dp"
-                    android:layout_alignParentRight="true" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/moticoins_remove_ads"
-                    android:textSize="25dp"
-                    android:layout_marginLeft="@dimen/card_horizontal_margin"
-                    android:layout_centerVertical="true" />
-            </RelativeLayout>
-        </android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/unlock_moticons"
-            android:layout_below="@+id/remove_ads"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_margin="5dp">
-            <RelativeLayout
+                android:layout_height="80dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_margin="5dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/remove_ads_moticoins"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/right"
+                        android:textColor="@color/md_white_1000"
+                        android:textSize="16dp"
+                        android:layout_alignParentRight="true" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/moticoins_remove_ads"
+                        android:textSize="25dp"
+                        android:layout_marginLeft="@dimen/card_horizontal_margin"
+                        android:layout_centerVertical="true" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/unlock_moticons"
+                android:layout_below="@+id/remove_ads"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/unlock_moticons_moticoins"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:background="@drawable/right"
-                    android:textColor="@color/md_white_1000"
-                    android:textSize="16dp"
-                    android:layout_alignParentRight="true" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/moticoins_unlock_moticons"
-                    android:textSize="25dp"
-                    android:layout_marginLeft="@dimen/card_horizontal_margin"
-                    android:layout_centerVertical="true" />
-            </RelativeLayout>
-        </android.support.v7.widget.CardView>
-    </RelativeLayout>
+                android:layout_height="80dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_margin="5dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/unlock_moticons_moticoins"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/right"
+                        android:textColor="@color/md_white_1000"
+                        android:textSize="16dp"
+                        android:layout_alignParentRight="true" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/moticoins_unlock_moticons"
+                        android:textSize="25dp"
+                        android:layout_marginLeft="@dimen/card_horizontal_margin"
+                        android:layout_centerVertical="true" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>
