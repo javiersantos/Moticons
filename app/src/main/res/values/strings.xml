@@ -50,7 +50,7 @@
 
     <!-- Slides -->
     <string name="slide_1">Welcome! This is a Moticon</string>
-    <string name="slide_1_description">To use this Moticon is as simple as tapping the card.\n\nLet\'s try and paste it where you want!</string>
+    <string name="slide_1_description">Use this Moticon is as simple as tapping the card, then you will be able to paste it where you want.\n\nLet\'s try with this example!</string>
     <string name="slide_2">Share a Moticon directly</string>
     <string name="slide_2_description">Try doing a long tap on the card. You should be able to share it to Telegram, WhatsApp, Twitter, etc.</string>
     <string name="slide_3">Some Moticons need to be unlocked</string>
@@ -61,6 +61,7 @@
     <string name="slide_awesome">Awesome!</string>
     <string name="slide_exit">Are you sure?</string>
     <string name="slide_exit_description">You are about to close the initial guide to start using Moticons. We have a special gift at the end if you finish it. Do you want to continue with the initial guide?</string>
+    <string name="slide_hint">Paste Moticon here</string>
 
     <!-- Toasts and Snackbar -->
     <string name="tap_exit">Tap again to close the app</string>

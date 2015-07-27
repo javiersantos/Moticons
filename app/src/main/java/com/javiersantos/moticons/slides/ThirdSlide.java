@@ -41,7 +41,7 @@ public class ThirdSlide extends Fragment {
         slide_card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder confirmUnlock = UtilsDialog.showDialog(container.getContext(), container.getContext().getResources().getString(R.string.moticon_unlock), String.format(container.getContext().getString(R.string.moticon_unlock_description), "5", "5", slide_card_moticon.getText()));
+                AlertDialog.Builder confirmUnlock = UtilsDialog.showDialog(container.getContext(), container.getContext().getResources().getString(R.string.moticon_unlock), String.format(container.getContext().getString(R.string.moticon_unlock_description), 5, 5, slide_card_moticon.getText()));
                 confirmUnlock.setPositiveButton(container.getContext().getResources().getString(R.string.button_unlock), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

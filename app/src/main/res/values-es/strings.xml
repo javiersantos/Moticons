@@ -46,7 +46,7 @@
 
     <!-- Slides -->
     <string name="slide_1">¡Bienvenido! Ésto es un Moticon</string>
-    <string name="slide_1_description">Usarlo es tan simple como pulsar en la tarjeta.\n\n¡Inténtalo y pégalo donde quieras!</string>
+    <string name="slide_1_description">Usarlo es tan simple como pulsar en la tarjeta, después podrás pegarlo donde quieras.\n\n¡Inténtalo con este ejemplo!</string>
     <string name="slide_2">Compartir un Moticon directamente</string>
     <string name="slide_2_description">Mantén pulsado la tarjeta durante unos segundos.\n\nPodrás compartirlo en Telegram, WhatsApp, Twitter, etc.</string>
     <string name="slide_3">Algunos necesitan ser desbloqueados</string>
@@ -57,6 +57,7 @@
     <string name="slide_awesome">¡Genial!</string>
     <string name="slide_exit">¿Estás seguro?</string>
     <string name="slide_exit_description">Estás a un paso de cerrar la introducción para empezar a usar Moticons. Tenemos un regalo especial al final si lo terminas. ¿Quiéres continuar con la introducción?</string>
+    <string name="slide_hint">Pegar Moticon aquí</string>
 
     <!-- Toasts and Snackbar -->
     <string name="tap_exit">Pulsa de nuevo para salir</string>
