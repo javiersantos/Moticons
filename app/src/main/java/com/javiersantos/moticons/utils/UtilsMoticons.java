@@ -266,7 +266,7 @@ public class UtilsMoticons {
     public static List<Integer> retrieveAdMoticon(List<Moticon> moticonList) {
         List<Integer> admobMoticonList = new ArrayList<>();
         for (int i = 0; i < moticonList.size()-1; i++) {
-            if (i%20 == 0) {
+            if (i%24 == 0) {
                 admobMoticonList.add(moticonList.get(i).getId());
             }
         }

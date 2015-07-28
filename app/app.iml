@@ -153,6 +153,7 @@
     <orderEntry type="library" exported="" name="floatingactionbutton-1.9.1" level="project" />
     <orderEntry type="library" exported="" name="play-services-appstate-7.5.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-games-7.5.0" level="project" />
+    <orderEntry type="library" exported="" name="heyzap-ads-sdk" level="project" />
     <orderEntry type="library" exported="" name="play-services-identity-7.5.0" level="project" />
     <orderEntry type="library" exported="" name="aes-crypto-0.0.2" level="project" />
     <orderEntry type="library" exported="" name="secure-preferences-lib-0.1.1" level="project" />

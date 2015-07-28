@@ -10,9 +10,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
+import com.heyzap.sdk.ads.HeyzapAds;
+import com.heyzap.sdk.ads.IncentivizedAd;
 import com.javiersantos.moticons.MoticonsApplication;
 import com.javiersantos.moticons.R;
 import com.javiersantos.moticons.utils.AppPreferences;
@@ -40,7 +39,6 @@ public class MoticoinsActivity extends AppCompatActivity {
 
     // MoticoinsActivity variables
     private AppPreferences appPreferences;
-    private InterstitialAd interstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,39 +120,16 @@ public class MoticoinsActivity extends AppCompatActivity {
             });
         }
 
-        interstitialAd = new InterstitialAd(context);
-        interstitialAd.setAdUnitId("ca-app-pub-0459828968162938/8863489672");
-
-        interstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdClosed() {
-                super.onAdClosed();
-                appPreferences.setMoticoins(appPreferences.getMoticoins() + MOTICOINS_VIDEO);
-                moticoins_amount.setText(appPreferences.getMoticoins().toString());
-                MainActivity.updateMoticoins(context);
-                requestNewInterstitial();
-            }
-
-            @Override
-            public void onAdLoaded() {
-                super.onAdLoaded();
-                adAvailable(true);
-            }
-
-            @Override
-            public void onAdFailedToLoad(int errorCode) {
-                super.onAdFailedToLoad(errorCode);
-                adAvailable(false);
-            }
-        });
+        HeyzapAds.start("2bc308f6279aaed46b1b2f20591e4789", activity, HeyzapAds.DISABLE_AUTOMATIC_FETCH);
+        setupCallbacks();
 
         requestNewInterstitial();
 
         moticoins_video.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (interstitialAd.isLoaded()) {
-                    interstitialAd.show();
+                if (IncentivizedAd.isAvailable()) {
+                    IncentivizedAd.display(activity);
                 } else {
                     UtilsDialog.showSnackbar(activity, getResources().getString(R.string.moticoins_ad_not_available)).show();
                 }
@@ -177,25 +152,100 @@ public class MoticoinsActivity extends AppCompatActivity {
         });
     }
 
+    protected void setupCallbacks() {
+        HeyzapAds.OnStatusListener statusListener = new HeyzapAds.OnStatusListener() {
+            @Override
+            public void onShow(String s) {
+
+            }
+
+            @Override
+            public void onClick(String s) {
+
+            }
+
+            @Override
+            public void onHide(String s) {
+
+            }
+
+            @Override
+            public void onFailedToShow(String s) {
+                adAvailable(false);
+            }
+
+            @Override
+            public void onAvailable(String s) {
+                adAvailable(true);
+            }
+
+            @Override
+            public void onFailedToFetch(String s) {
+                adAvailable(false);
+            }
+
+            @Override
+            public void onAudioStarted() {
+
+            }
+
+            @Override
+            public void onAudioFinished() {
+
+            }
+        };
+
+        IncentivizedAd.setOnStatusListener(statusListener);
+
+        HeyzapAds.OnIncentiveResultListener incentiveResultListener = new HeyzapAds.OnIncentiveResultListener() {
+            @Override
+            public void onComplete(String s) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        appPreferences.setMoticoins(appPreferences.getMoticoins() + MOTICOINS_VIDEO);
+                        moticoins_amount.setText(appPreferences.getMoticoins().toString());
+                        MainActivity.updateMoticoins(context);
+                        requestNewInterstitial();
+                    }
+                });
+            }
+
+            @Override
+            public void onIncomplete(String s) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        requestNewInterstitial();
+                    }
+                });
+            }
+        };
+
+        IncentivizedAd.setOnIncentiveResultListener(incentiveResultListener);
+    }
+
     private void requestNewInterstitial() {
-        AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice(MoticonsApplication.getTestDevice())
-                .build();
+        IncentivizedAd.fetch();
 
         show_ad.setVisibility(View.GONE);
         progressWheel.setVisibility(View.VISIBLE);
-        interstitialAd.loadAd(adRequest);
     }
 
-    private void adAvailable(Boolean available) {
-        if (available) {
-            show_ad_description.setText(getResources().getString(R.string.moticoins_ad_description));
-        } else {
-            show_ad_description.setText(getResources().getString(R.string.moticoins_ad_not_available));
-        }
+    private void adAvailable(final Boolean available) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (available) {
+                    show_ad_description.setText(getResources().getString(R.string.moticoins_ad_description));
+                } else {
+                    show_ad_description.setText(getResources().getString(R.string.moticoins_ad_not_available));
+                }
 
-        progressWheel.setVisibility(View.GONE);
-        show_ad.setVisibility(View.VISIBLE);
+                progressWheel.setVisibility(View.GONE);
+                show_ad.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
     @Override
