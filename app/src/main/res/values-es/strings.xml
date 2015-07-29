@@ -10,6 +10,7 @@
     <string name="action_negative">Negativos</string>
     <string name="action_funny">Divertidos</string>
     <string name="action_animal">Animales</string>
+    <string name="action_special">Especiales</string>
     <string name="action_about">Acerca de</string>
 
     <!-- Labels -->

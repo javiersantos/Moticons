@@ -25,7 +25,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import java.util.Calendar;
 
 public class UtilsUI {
-    public static Drawer showNavigationDrawer(final Context context, Toolbar toolbar, final MoticonAdapter moticonAdapter, final MoticonAdapter moticonPositiveAdapter, final MoticonAdapter moticonNegativeAdapter, final MoticonAdapter moticonFunnyAdapter, final MoticonAdapter moticonAnimalsAdapter, final RecyclerView recyclerView) {
+    public static Drawer showNavigationDrawer(final Context context, Toolbar toolbar, final MoticonAdapter moticonAdapter, final MoticonAdapter moticonPositiveAdapter, final MoticonAdapter moticonNegativeAdapter, final MoticonAdapter moticonFunnyAdapter, final MoticonAdapter moticonAnimalsAdapter, final MoticonAdapter moticonSpecialAdapter, final RecyclerView recyclerView) {
         Activity activity = (Activity) context;
 
         AccountHeader headerResult = new AccountHeaderBuilder()
@@ -44,6 +44,7 @@ public class UtilsUI {
                         new PrimaryDrawerItem().withName(context.getResources().getString(R.string.action_negative)).withIcon(FontAwesome.Icon.faw_thumbs_down).withBadge("(>_<)"),
                         new PrimaryDrawerItem().withName(context.getResources().getString(R.string.action_funny)).withIcon(FontAwesome.Icon.faw_child).withBadge("¯\\_(ツ)_/¯"),
                         new PrimaryDrawerItem().withName(context.getResources().getString(R.string.action_animal)).withIcon(FontAwesome.Icon.faw_paw).withBadge("∪･ω･∪"),
+                        new PrimaryDrawerItem().withName(context.getResources().getString(R.string.action_special)).withIcon(FontAwesome.Icon.faw_star).withBadge("╰༼=ಠਊಠ=༽╯"),
                         new DividerDrawerItem(),
                         new SecondaryDrawerItem().withName(context.getResources().getString(R.string.action_about)).withCheckable(false)
                 )
@@ -66,7 +67,10 @@ public class UtilsUI {
                             case 5:
                                 recyclerView.setAdapter(moticonAnimalsAdapter);
                                 break;
-                            case 7:
+                            case 6:
+                                recyclerView.setAdapter(moticonSpecialAdapter);
+                                break;
+                            case 8:
                                 context.startActivity(new Intent(context, AboutActivity.class));
                                 break;
                             default:

@@ -27,63 +27,63 @@ public class UtilsMoticons {
         moticons.add(new Moticon("(⌒▽⌒)☆", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.HAPPY))));
         moticons.add(new Moticon("⊂((・▽・))⊃", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.HAPPY))));
         moticons.add(new Moticon("（・◇・）", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.HAPPY))));
-        moticons.add(new Moticon("（＾_＾）", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.HAPPY)), 5));
+        moticons.add(new Moticon("（＾_＾）", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.HAPPY))));
         moticons.add(new Moticon("＼（＾ ＾）／", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.HAPPY))));
         moticons.add(new Moticon("(^～^)", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.HAPPY))));
-        moticons.add(new Moticon("(/^▽^)/", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.HAPPY)), 5));
+        moticons.add(new Moticon("(/^▽^)/", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.HAPPY))));
         moticons.add(new Moticon("(ﾉ´ｰ`)ﾉ", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.HAPPY))));
-        moticons.add(new Moticon("ヽ(´ー`)ﾉ", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.HAPPY)), 5));
+        moticons.add(new Moticon("ヽ(´ー`)ﾉ", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.HAPPY))));
         moticons.add(new Moticon("（＾ω＾）", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.HAPPY))));
-        moticons.add(new Moticon("｡◕‿◕｡", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.HAPPY)), 5));
-        moticons.add(new Moticon("ヽ(^。^)丿", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.HAPPY)), 5));
+        moticons.add(new Moticon("｡◕‿◕｡", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.HAPPY))));
+        moticons.add(new Moticon("ヽ(^。^)丿", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.HAPPY))));
         moticons.add(new Moticon("∩(︶▽︶)∩", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.HAPPY))));
         moticons.add(new Moticon("(¬‿¬)", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.HAPPY))));
         moticons.add(new Moticon("(•‿•)", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.HAPPY))));
         moticons.add(new Moticon("( ͡° ͜ʖ ͡°)", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.HAPPY))));
 
-        moticons.add(new Moticon("( ˘ ³˘)❤", MoticonCategory.POSITIVE, new ArrayList<>(Arrays.asList(MoticonKeywords.LOVE, MoticonKeywords.KISSING)), 5));
+        moticons.add(new Moticon("( ˘ ³˘)❤", MoticonCategory.POSITIVE, new ArrayList<>(Arrays.asList(MoticonKeywords.LOVE, MoticonKeywords.KISSING))));
         moticons.add(new Moticon("(・_・)❤(-_-)", MoticonCategory.POSITIVE, new ArrayList<>(Arrays.asList(MoticonKeywords.LOVE, MoticonKeywords.KISSING))));
         moticons.add(new Moticon("（´・｀ ）♡", MoticonCategory.POSITIVE, new ArrayList<>(Arrays.asList(MoticonKeywords.LOVE, MoticonKeywords.KISSING))));
         moticons.add(new Moticon("(´ε｀ )♡", MoticonCategory.POSITIVE, new ArrayList<>(Arrays.asList(MoticonKeywords.LOVE, MoticonKeywords.KISSING))));
 
-        moticons.add(new Moticon("＼(^o^)／", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.EXCITED)), 10));
+        moticons.add(new Moticon("＼(^o^)／", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.EXCITED))));
 
         moticons.add(new Moticon("(づ￣ ³￣)づ", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.HUGGING))));
         moticons.add(new Moticon("(っ˘з(˘⌣˘ )", MoticonCategory.POSITIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.HUGGING))));
 
         // NEGATIVE
-        moticons.add(new Moticon("(>_<)", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.ANGRY)), 5));
-        moticons.add(new Moticon("（＞д＜）", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.ANGRY)), 5));
+        moticons.add(new Moticon("(>_<)", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.ANGRY))));
+        moticons.add(new Moticon("（＞д＜）", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.ANGRY))));
         moticons.add(new Moticon("(¬д¬。)", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.ANGRY))));
         moticons.add(new Moticon("(¬､¬)", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.ANGRY))));
         moticons.add(new Moticon("（；¬＿¬)", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.ANGRY))));
         moticons.add(new Moticon("ヽ(●-`Д´-)ノ", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.ANGRY))));
         moticons.add(new Moticon("(¬_¬)ﾉ", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.ANGRY))));
         moticons.add(new Moticon("(」゜ロ゜)」", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.ANGRY))));
-        moticons.add(new Moticon("＼(｀0´)／", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.ANGRY)), 5));
+        moticons.add(new Moticon("＼(｀0´)／", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.ANGRY))));
         moticons.add(new Moticon("(ノಠ益ಠ)ノ", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.ANGRY))));
         moticons.add(new Moticon("ᕙ(⇀‸↼‶)ᕗ", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.ANGRY))));
         moticons.add(new Moticon("( ಠ ಠ )", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.ANGRY))));
-        moticons.add(new Moticon("ಠ_ಠ", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.ANGRY)), 10));
+        moticons.add(new Moticon("ಠ_ಠ", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.ANGRY))));
 
         moticons.add(new Moticon("ಥ_ಥ", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.CRYING))));
-        moticons.add(new Moticon("(¬_¬)", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.SAD)), 5));
+        moticons.add(new Moticon("(¬_¬)", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.SAD))));
         moticons.add(new Moticon("t(-_-t)", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.SAD))));
         moticons.add(new Moticon("(҂⌣̀_⌣́)", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.SAD))));
 
         moticons.add(new Moticon("(T＿T)", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.SAD))));
-        moticons.add(new Moticon("⊙︿⊙", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.SAD)), 5));
+        moticons.add(new Moticon("⊙︿⊙", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.SAD))));
         moticons.add(new Moticon("o(╥﹏╥)o", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.CRYING))));
         moticons.add(new Moticon("(╯︵╰,)", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.SAD))));
         moticons.add(new Moticon("(っ˘̩╭╮˘̩)っ", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.SAD))));
 
         moticons.add(new Moticon("(~_~;)", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.WORRIED))));
         moticons.add(new Moticon("⊙﹏⊙", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.WORRIED))));
-        moticons.add(new Moticon("(⊙…⊙ )", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.WORRIED)), 10));
+        moticons.add(new Moticon("(⊙…⊙ )", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.WORRIED))));
 
         moticons.add(new Moticon("(✖╭╮✖)", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.DEAD))));
         moticons.add(new Moticon("(*_*)", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.DEAD))));
-        moticons.add(new Moticon("✖‿✖", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.DEAD)), 5));
+        moticons.add(new Moticon("✖‿✖", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.DEAD))));
         moticons.add(new Moticon("╭( ✖_✖ )╮", MoticonCategory.NEGATIVE, new ArrayList<>(Collections.singletonList(MoticonKeywords.DEAD))));
 
         // FUNNY
@@ -92,52 +92,66 @@ public class UtilsMoticons {
         moticons.add(new Moticon("ヽ( ´¬`)ノ", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.WHATEVER))));
         moticons.add(new Moticon("┗┃・ ■ ・┃┛", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.WHATEVER))));
         moticons.add(new Moticon("ヽ（・＿・；)ノ", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.WHATEVER))));
-        moticons.add(new Moticon("ヽ(。_°)ノ", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.WHATEVER)), 5));
+        moticons.add(new Moticon("ヽ(。_°)ノ", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.WHATEVER))));
         moticons.add(new Moticon("(;´・`)>", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.WHATEVER))));
-        moticons.add(new Moticon("┐(￣ヮ￣)┌", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.WHATEVER)), 10));
+        moticons.add(new Moticon("┐(￣ヮ￣)┌", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.WHATEVER))));
         moticons.add(new Moticon("╰(　´◔　ω　◔ `)", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.WHATEVER))));
         moticons.add(new Moticon("╮(╯▽╰)╭", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.WHATEVER))));
 
-        moticons.add(new Moticon("(/・・)ノ", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.DANCING)), 5));
+        moticons.add(new Moticon("(/・・)ノ", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.DANCING))));
         moticons.add(new Moticon("(o´･_･)っ", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.DANCING))));
-        moticons.add(new Moticon("(ﾉ･ｪ･)ﾉ", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.DANCING)), 5));
+        moticons.add(new Moticon("(ﾉ･ｪ･)ﾉ", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.DANCING))));
         moticons.add(new Moticon("(ﾉ*ﾟｰﾟ)ﾉ", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.DANCING))));
         moticons.add(new Moticon("＼(ﾟｰﾟ＼)", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.DANCING))));
         moticons.add(new Moticon("♪(┌・。・)┌", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.DANCING))));
-        moticons.add(new Moticon("〜(^∇^〜）", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.DANCING)), 5));
+        moticons.add(new Moticon("〜(^∇^〜）", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.DANCING))));
         moticons.add(new Moticon("ヽ(*ﾟｰﾟ*)ﾉ", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.DANCING))));
         moticons.add(new Moticon("〜(￣△￣〜)", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.DANCING))));
         moticons.add(new Moticon("（〜^∇^)〜", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.DANCING))));
-        moticons.add(new Moticon("(~‾▿‾)~", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.DANCING)), 5));
-        moticons.add(new Moticon("(┌ﾟдﾟ)┌", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.DANCING)), 5));
+        moticons.add(new Moticon("(~‾▿‾)~", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.DANCING))));
+        moticons.add(new Moticon("(┌ﾟдﾟ)┌", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.DANCING))));
         moticons.add(new Moticon("(ﾉ･o･)ﾉ", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.DANCING))));
         moticons.add(new Moticon("┐(ﾟдﾟ┐)", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.DANCING))));
-        moticons.add(new Moticon("└(^o^)┐", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.DANCING)), 10));
+        moticons.add(new Moticon("└(^o^)┐", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.DANCING))));
         moticons.add(new Moticon("ƪ(‾.‾“)┐", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.DANCING))));
         moticons.add(new Moticon("ƪ(˘⌣˘)┐", MoticonCategory.FUNNY, new ArrayList<>(Collections.singletonList(MoticonKeywords.DANCING))));
 
         // ANIMALS
-        moticons.add(new Moticon("(=^･^=)", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.CAT)), 10));
+        moticons.add(new Moticon("(=^･^=)", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.CAT))));
         moticons.add(new Moticon("(^._.^)ﾉ", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.CAT))));
         moticons.add(new Moticon("(^人^)", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.CAT))));
 
-        moticons.add(new Moticon("∪･ω･∪", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.DOG)), 5));
+        moticons.add(new Moticon("∪･ω･∪", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.DOG))));
         moticons.add(new Moticon("(｀・ω・´)”", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.DOG))));
         moticons.add(new Moticon("∩( ・ω・)∩", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.DOG))));
         moticons.add(new Moticon("(︶ω︶)", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.DOG))));
 
         moticons.add(new Moticon("（・⊝・）", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.BIRD))));
         moticons.add(new Moticon("（・⊝・∞）", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.BIRD))));
-        moticons.add(new Moticon("（・θ・）", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.BIRD)), 5));
+        moticons.add(new Moticon("（・θ・）", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.BIRD))));
         moticons.add(new Moticon("（`･⊝･´ ）", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.BIRD))));
-        moticons.add(new Moticon("(°<°)", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.BIRD)), 5));
+        moticons.add(new Moticon("(°<°)", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.BIRD))));
         moticons.add(new Moticon("（ﾟ∈ﾟ）", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.BIRD))));
-        moticons.add(new Moticon("ˏ₍•ɞ•₎ˎ", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.BIRD)), 10));
+        moticons.add(new Moticon("ˏ₍•ɞ•₎ˎ", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.BIRD))));
         moticons.add(new Moticon("꜀( ˊ̠˂˃ˋ̠ )꜆", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.BIRD))));
 
-        moticons.add(new Moticon("@(o･ｪ･)@", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.MONKEY)), 10));
+        moticons.add(new Moticon("@(o･ｪ･)@", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.MONKEY))));
         moticons.add(new Moticon("└@(･ｪ･)@┐”", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.MONKEY))));
         moticons.add(new Moticon("@(o･ｪ･o)@", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.MONKEY))));
+
+        // SPECIAL
+        moticons.add(new Moticon("༼ つ ͠° ͟ ͟ʖ ͡° ༽つ", MoticonCategory.SPECIAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.CONFUSED)), 10));
+        moticons.add(new Moticon("(☞◣д◢)☞", MoticonCategory.SPECIAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.CRAZY)), 10));
+        moticons.add(new Moticon("┗(｀Дﾟ┗(｀ﾟДﾟ´)┛ﾟД´)┛", MoticonCategory.SPECIAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.ANGRY)), 10));
+        moticons.add(new Moticon("╰༼=ಠਊಠ=༽╯", MoticonCategory.SPECIAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.BIRD)), 10));
+        moticons.add(new Moticon("ʕつ ͡◔ ᴥ ͡◔ʔつ", MoticonCategory.SPECIAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.BEAR)), 10));
+        moticons.add(new Moticon("ʕ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ", MoticonCategory.SPECIAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.BEAR)), 10));
+        moticons.add(new Moticon("ʕ•̫͡•ʔ❤ʕ•̫͡•ʔ", MoticonCategory.SPECIAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.BEAR)), 10));
+        moticons.add(new Moticon("༼ ಠ ͟ʖ ಠ ༽", MoticonCategory.SPECIAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.LOL)), 10));
+        moticons.add(new Moticon("┌༼•́ ͜ʖ •̀༽┘", MoticonCategory.SPECIAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.LOL)), 10));
+        moticons.add(new Moticon("(ง ͡ʘ ͜ʖ ͡ʘ)ง", MoticonCategory.SPECIAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.EXCITED)), 10));
+        moticons.add(new Moticon("ᕙ༼*◕_◕*༽ᕤ", MoticonCategory.SPECIAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.HAPPY)), 10));
+        moticons.add(new Moticon("♨(⋆‿⋆)♨", MoticonCategory.SPECIAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.EXCITED)), 10));
 
 
         retrieveInternalStats(moticons);
@@ -196,11 +210,17 @@ public class UtilsMoticons {
 
     private static void checkUnlocked(List<Moticon> moticonList) {
         appPreferences = MoticonsApplication.getAppPreferences();
-        for (String string : appPreferences.getMoticonUnlocked()) {
-            Integer moticonID = Integer.valueOf(string);
+        if (appPreferences.getUnlockAllMoticons()) {
             for (Moticon moticon : moticonList) {
-                if (moticon.getId().equals(moticonID)) {
-                    moticon.setUnlocked(true);
+                moticon.setUnlocked(true);
+            }
+        } else {
+            for (String string : appPreferences.getMoticonUnlocked()) {
+                Integer moticonID = Integer.valueOf(string);
+                for (Moticon moticon : moticonList) {
+                    if (moticon.getId().equals(moticonID)) {
+                        moticon.setUnlocked(true);
+                    }
                 }
             }
         }

@@ -21,7 +21,7 @@ import com.pnikosis.materialishprogress.ProgressWheel;
 
 public class MoticoinsActivity extends AppCompatActivity {
     private static final Integer MOTICOINS_VIDEO = 6;
-    private static final Integer MOTICOINS_REMOVE_ADS = 125;
+    private static final Integer MOTICOINS_REMOVE_ADS = 225;
 
     // UI
     private Toolbar toolbar;

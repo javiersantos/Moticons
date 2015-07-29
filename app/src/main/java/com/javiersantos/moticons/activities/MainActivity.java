@@ -64,11 +64,13 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     private List<Moticon> moticonNegativeList;
     private List<Moticon> moticonFunnyList;
     private List<Moticon> moticonAnimalsList;
+    private List<Moticon> moticonSpecialList;
     private MoticonAdapter moticonAdapter;
     private MoticonAdapter moticonPositiveAdapter;
     private MoticonAdapter moticonNegativeAdapter;
     private MoticonAdapter moticonFunnyAdapter;
     private MoticonAdapter moticonAnimalsAdapter;
+    private MoticonAdapter moticonSpecialAdapter;
     private Boolean doubleBackToExitPressedOnce = false;
 
     @Override
@@ -145,6 +147,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
             moticonNegativeList = new ArrayList<>();
             moticonFunnyList = new ArrayList<>();
             moticonAnimalsList = new ArrayList<>();
+            moticonSpecialList = new ArrayList<>();
         }
 
         @Override
@@ -171,6 +174,8 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                     case ANIMAL:
                         moticonAnimalsList.add(moticon);
                         break;
+                    case SPECIAL:
+                        moticonSpecialList.add(moticon);
                     default:
                         break;
                 }
@@ -181,6 +186,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
             moticonNegativeAdapter = new MoticonAdapter(moticonNegativeList, context);
             moticonFunnyAdapter = new MoticonAdapter(moticonFunnyList, context);
             moticonAnimalsAdapter = new MoticonAdapter(moticonAnimalsList, context);
+            moticonSpecialAdapter = new MoticonAdapter(moticonSpecialList, context);
 
             return null;
         }
@@ -193,7 +199,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
             recyclerView.setAdapter(moticonAdapter);
             progressWheel.setVisibility(View.GONE);
 
-            drawer = UtilsUI.showNavigationDrawer(context, toolbar, moticonAdapter, moticonPositiveAdapter, moticonNegativeAdapter, moticonFunnyAdapter, moticonAnimalsAdapter, recyclerView);
+            drawer = UtilsUI.showNavigationDrawer(context, toolbar, moticonAdapter, moticonPositiveAdapter, moticonNegativeAdapter, moticonFunnyAdapter, moticonAnimalsAdapter, moticonSpecialAdapter, recyclerView);
         }
 
     }
