@@ -44,7 +44,7 @@ public class UtilsUI {
                         new PrimaryDrawerItem().withName(context.getResources().getString(R.string.action_negative)).withIcon(FontAwesome.Icon.faw_thumbs_down).withBadge("(>_<)"),
                         new PrimaryDrawerItem().withName(context.getResources().getString(R.string.action_funny)).withIcon(FontAwesome.Icon.faw_child).withBadge("¯\\_(ツ)_/¯"),
                         new PrimaryDrawerItem().withName(context.getResources().getString(R.string.action_animal)).withIcon(FontAwesome.Icon.faw_paw).withBadge("∪･ω･∪"),
-                        new PrimaryDrawerItem().withName(context.getResources().getString(R.string.action_special)).withIcon(FontAwesome.Icon.faw_star).withBadge("╰༼=ಠਊಠ=༽╯"),
+                        new PrimaryDrawerItem().withName(context.getResources().getString(R.string.action_special)).withIcon(FontAwesome.Icon.faw_star).withBadge("ʕ•̬͡•ʕ•̫͡•♥"),
                         new DividerDrawerItem(),
                         new SecondaryDrawerItem().withName(context.getResources().getString(R.string.action_about)).withCheckable(false)
                 )
@@ -106,6 +106,9 @@ public class UtilsUI {
                 break;
             case ANIMAL:
                 res = context.getResources().getString(R.string.action_animal);
+                break;
+            case SPECIAL:
+                res = context.getResources().getString(R.string.action_special);
                 break;
         }
 
