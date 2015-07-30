@@ -2,6 +2,7 @@ package com.javiersantos.moticons.activities;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -12,8 +13,13 @@ import android.widget.TextView;
 
 import com.heyzap.sdk.ads.HeyzapAds;
 import com.heyzap.sdk.ads.IncentivizedAd;
+import com.javiersantos.moticons.Keys;
 import com.javiersantos.moticons.MoticonsApplication;
 import com.javiersantos.moticons.R;
+import com.javiersantos.moticons.billing.IabHelper;
+import com.javiersantos.moticons.billing.IabResult;
+import com.javiersantos.moticons.billing.Inventory;
+import com.javiersantos.moticons.billing.Purchase;
 import com.javiersantos.moticons.utils.AppPreferences;
 import com.javiersantos.moticons.utils.UtilsDialog;
 import com.javiersantos.moticons.utils.UtilsMoticons;
@@ -22,23 +28,43 @@ import com.pnikosis.materialishprogress.ProgressWheel;
 public class MoticoinsActivity extends AppCompatActivity {
     private static final Integer MOTICOINS_VIDEO = 6;
     private static final Integer MOTICOINS_REMOVE_ADS = 225;
+    private static Integer MOTICOINS_UNLOCK_MOTICONS = UtilsMoticons.retrieveMoticoins(UtilsMoticons.loadMoticons());
+    private static final String INAPP_REMOVE_ADS = "$1.43";
+    private static final String INAPP_UNLOCK_MOTICONS = "$0.79";
+    private static final String ITEM_SKU_ADS = "com.javiersantos.moticons.inappads";
+    private static final String ITEM_SKU_MOTICONS = "com.javiersantos.moticons.inappmoticons";
+
+    // MoticoinsActivity variables
+    private AppPreferences appPreferences;
 
     // UI
     private Toolbar toolbar;
     private Context context;
     private Activity activity;
+    private IabHelper mHelper;
+
+    // VIDEO
     private TextView moticoins_amount;
     private CardView moticoins_video;
     private ProgressWheel progressWheel;
     private LinearLayout show_ad;
     private TextView show_ad_description;
-    private CardView remove_ads;
-    private TextView remove_ads_moticoins;
-    private CardView unlock_moticons;
-    private TextView unlock_moticons_moticoins;
 
-    // MoticoinsActivity variables
-    private AppPreferences appPreferences;
+    // REMOVE ADS (MOTICOINS)
+    private CardView remove_ads_moticoins;
+    private TextView remove_ads_label_moticoins;
+
+    // REMOVE ADS (INAPP)
+    private CardView remove_ads_inapp;
+    private TextView remove_ads_label_inapp;
+
+    // UNLOCK MOTICONS (MOTICOINS)
+    private CardView unlock_moticons_moticoins;
+    private TextView unlock_moticons_label_moticoins;
+
+    // UNLOCK MOTICONS (INAPP)
+    private CardView unlock_moticons_inapp;
+    private TextView unlock_moticons_label_inapp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,31 +75,19 @@ public class MoticoinsActivity extends AppCompatActivity {
         this.appPreferences = MoticonsApplication.getAppPreferences();
 
         initUI();
-
-        progressWheel = (ProgressWheel) findViewById(R.id.progress);
-        show_ad = (LinearLayout) findViewById(R.id.show_ad);
-        show_ad_description = (TextView) findViewById(R.id.show_ad_description);
-        moticoins_amount = (TextView) findViewById(R.id.moticoins_amount);
-        moticoins_video = (CardView) findViewById(R.id.moticoins_video);
-        remove_ads = (CardView) findViewById(R.id.remove_ads);
-        remove_ads_moticoins = (TextView) findViewById(R.id.remove_ads_moticoins);
-        unlock_moticons = (CardView) findViewById(R.id.unlock_moticons);
-        unlock_moticons_moticoins = (TextView) findViewById(R.id.unlock_moticons_moticoins);
+        initScreenElements();
+        initInAppBilling();
 
         moticoins_amount.setText(appPreferences.getMoticoins().toString());
         moticoins_amount.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_stars_white, 0);
         moticoins_amount.setCompoundDrawablePadding(14);
 
         if (appPreferences.getRemovedAds()) {
-            remove_ads.setOnClickListener(null);
-            remove_ads_moticoins.setText(getResources().getString(R.string.unlocked));
-
+            updateScreenElements(1, true);
         } else {
-            remove_ads_moticoins.setText(MOTICOINS_REMOVE_ADS.toString());
-            remove_ads_moticoins.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_stars_white, 0);
-            remove_ads_moticoins.setCompoundDrawablePadding(4);
+            updateScreenElements(1, false);
 
-            remove_ads.setOnClickListener(new View.OnClickListener() {
+            remove_ads_moticoins.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (UtilsMoticons.canBuyWithMoticoins(MOTICOINS_REMOVE_ADS)) {
@@ -82,9 +96,7 @@ public class MoticoinsActivity extends AppCompatActivity {
                         appPreferences.setRemoveAds(true);
                         MainActivity.updateMoticoins(context);
                         UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_bought)).show();
-                        remove_ads.setOnClickListener(null);
-                        remove_ads_moticoins.setText(getResources().getString(R.string.unlocked));
-                        remove_ads_moticoins.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+                        updateScreenElements(1, true);
                     } else {
                         UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_not_bought)).show();
                     }
@@ -93,15 +105,11 @@ public class MoticoinsActivity extends AppCompatActivity {
         }
 
         if (appPreferences.getUnlockAllMoticons()) {
-            unlock_moticons.setOnClickListener(null);
-            unlock_moticons_moticoins.setText(getResources().getString(R.string.unlocked));
+            updateScreenElements(2, true);
         } else {
-            final Integer MOTICOINS_UNLOCK_MOTICONS = UtilsMoticons.retrieveMoticoins(UtilsMoticons.loadMoticons());
-            unlock_moticons_moticoins.setText(MOTICOINS_UNLOCK_MOTICONS.toString());
-            unlock_moticons_moticoins.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_stars_white, 0);
-            unlock_moticons_moticoins.setCompoundDrawablePadding(4);
+            updateScreenElements(2, false);
 
-            unlock_moticons.setOnClickListener(new View.OnClickListener() {
+            unlock_moticons_moticoins.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (UtilsMoticons.canBuyWithMoticoins(MOTICOINS_UNLOCK_MOTICONS)) {
@@ -110,9 +118,7 @@ public class MoticoinsActivity extends AppCompatActivity {
                         appPreferences.setUnlockAllMoticons(true);
                         MainActivity.updateMoticoins(context);
                         UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_bought)).show();
-                        unlock_moticons.setOnClickListener(null);
-                        unlock_moticons_moticoins.setText(getResources().getString(R.string.unlocked));
-                        unlock_moticons_moticoins.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+                        updateScreenElements(2, true);
                     } else {
                         UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_not_bought)).show();
                     }
@@ -120,8 +126,8 @@ public class MoticoinsActivity extends AppCompatActivity {
             });
         }
 
-        HeyzapAds.start("2bc308f6279aaed46b1b2f20591e4789", activity, HeyzapAds.DISABLE_AUTOMATIC_FETCH);
-        setupCallbacks();
+        HeyzapAds.start(Keys.getHeyZapPublicKey(), activity, HeyzapAds.DISABLE_AUTOMATIC_FETCH);
+        setupHeyzapCallbacks();
 
         requestNewInterstitial();
 
@@ -152,7 +158,176 @@ public class MoticoinsActivity extends AppCompatActivity {
         });
     }
 
-    protected void setupCallbacks() {
+    private void initScreenElements() {
+        // VIDEO
+        progressWheel = (ProgressWheel) findViewById(R.id.progress);
+        show_ad = (LinearLayout) findViewById(R.id.show_ad);
+        show_ad_description = (TextView) findViewById(R.id.show_ad_description);
+        moticoins_amount = (TextView) findViewById(R.id.moticoins_amount);
+        moticoins_video = (CardView) findViewById(R.id.moticoins_video);
+
+        // REMOVE ADS (MOTICOINS)
+        remove_ads_moticoins = (CardView) findViewById(R.id.remove_ads_moticoins);
+        remove_ads_label_moticoins = (TextView) findViewById(R.id.remove_ads_label_moticoins);
+
+        // REMOVE ADS (INAPP)
+        remove_ads_inapp = (CardView) findViewById(R.id.remove_ads_inapp);
+        remove_ads_label_inapp = (TextView) findViewById(R.id.remove_ads_label_inapp);
+
+        // UNLOCK MOTICONS (MOTICOINS)
+        unlock_moticons_moticoins = (CardView) findViewById(R.id.unlock_moticons_moticoins);
+        unlock_moticons_label_moticoins = (TextView) findViewById(R.id.unlock_moticons_label_moticoins);
+
+        // UNLOCK MOTICONS (INAPP)
+        unlock_moticons_inapp = (CardView) findViewById(R.id.unlock_moticons_inapp);
+        unlock_moticons_label_inapp = (TextView) findViewById(R.id.unlock_moticons_label_inapp);
+    }
+
+    /**
+     * Update the screen cards
+     * @param adsOrMoticons 1 for ads, 2 for Moticons
+     * @param res true if bought, otherwise false
+     */
+    private void updateScreenElements(Integer adsOrMoticons, Boolean res) {
+        switch (adsOrMoticons) {
+            case 1:
+                if (res) {
+                    remove_ads_moticoins.setOnClickListener(null);
+                    remove_ads_label_moticoins.setText(getResources().getString(R.string.unlocked));
+                    remove_ads_label_moticoins.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+                    remove_ads_inapp.setOnClickListener(null);
+                    remove_ads_label_inapp.setText(getResources().getString(R.string.unlocked));
+                    remove_ads_label_inapp.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+                } else {
+                    remove_ads_label_moticoins.setText(MOTICOINS_REMOVE_ADS.toString());
+                    remove_ads_label_moticoins.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_stars_white, 0);
+                    remove_ads_label_moticoins.setCompoundDrawablePadding(4);
+                    remove_ads_label_inapp.setText(INAPP_REMOVE_ADS);
+                    remove_ads_label_inapp.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_shop_white, 0);
+                    remove_ads_label_inapp.setCompoundDrawablePadding(4);
+                }
+                break;
+            case 2:
+                if (res) {
+                    unlock_moticons_moticoins.setOnClickListener(null);
+                    unlock_moticons_label_moticoins.setText(getResources().getString(R.string.unlocked));
+                    unlock_moticons_label_moticoins.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+                    unlock_moticons_inapp.setOnClickListener(null);
+                    unlock_moticons_label_inapp.setText(getResources().getString(R.string.unlocked));
+                    unlock_moticons_label_inapp.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+                } else {
+                    unlock_moticons_label_moticoins.setText(MOTICOINS_UNLOCK_MOTICONS.toString());
+                    unlock_moticons_label_moticoins.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_stars_white, 0);
+                    unlock_moticons_label_moticoins.setCompoundDrawablePadding(4);
+                    unlock_moticons_label_inapp.setText(INAPP_UNLOCK_MOTICONS);
+                    unlock_moticons_label_inapp.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_shop_white, 0);
+                    unlock_moticons_label_inapp.setCompoundDrawablePadding(4);
+                }
+                break;
+        }
+    }
+
+    private void initInAppBilling() {
+        final IabHelper.OnConsumeFinishedListener mConsumeFinishedListener = new IabHelper.OnConsumeFinishedListener() {
+            @Override
+            public void onConsumeFinished(Purchase purchase, IabResult result) {
+                if (result.isSuccess()) {
+                    switch (purchase.getSku()) {
+                        case ITEM_SKU_ADS:
+                            appPreferences.setRemoveAds(true);
+                            updateScreenElements(1, true);
+                            UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_bought)).show();
+                            break;
+                        case ITEM_SKU_MOTICONS:
+                            appPreferences.setUnlockAllMoticons(true);
+                            updateScreenElements(2, true);
+                            UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_bought)).show();
+                            break;
+                    }
+                } else {
+                    UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_inapp_error)).show();
+                }
+            }
+        };
+
+        final IabHelper.QueryInventoryFinishedListener mReceivedInventoryAdsListener = new IabHelper.QueryInventoryFinishedListener() {
+            @Override
+            public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
+                if (result.isFailure()) {
+                    UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_inapp_error)).show();
+                } else {
+                    mHelper.consumeAsync(inventory.getPurchase(ITEM_SKU_ADS), mConsumeFinishedListener);
+                }
+            }
+        };
+
+        final IabHelper.QueryInventoryFinishedListener mReceivedInventoryMoticonsListener = new IabHelper.QueryInventoryFinishedListener() {
+            @Override
+            public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
+                if (result.isFailure()) {
+                    UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_inapp_error)).show();
+                } else {
+                    mHelper.consumeAsync(inventory.getPurchase(ITEM_SKU_MOTICONS), mConsumeFinishedListener);
+                }
+            }
+        };
+
+        final IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedAdsListener = new IabHelper.OnIabPurchaseFinishedListener() {
+            @Override
+            public void onIabPurchaseFinished(IabResult result, Purchase purchase) {
+                if (result.isFailure()) {
+                    if (result.getResponse() == 7) {
+                        UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_bought)).show();
+                        appPreferences.setRemoveAds(true);
+                        updateScreenElements(1, true);
+                    } else {
+                        UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_inapp_error)).show();
+                    }
+                } else {
+                    mHelper.queryInventoryAsync(mReceivedInventoryAdsListener);
+                }
+            }
+        };
+
+        final IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedMoticonsListener = new IabHelper.OnIabPurchaseFinishedListener() {
+            @Override
+            public void onIabPurchaseFinished(IabResult result, Purchase purchase) {
+                if (result.isFailure()) {
+                    if (result.getResponse() == 7) {
+                        UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_bought)).show();
+                        appPreferences.setUnlockAllMoticons(true);
+                        updateScreenElements(2, true);
+                    } else {
+                        UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_inapp_error)).show();
+                    }
+                } else {
+                    mHelper.queryInventoryAsync(mReceivedInventoryMoticonsListener);
+                }
+            }
+        };
+
+        mHelper = new IabHelper(context, Keys.getBase64EncodedPublicKey());
+        mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
+            public void onIabSetupFinished(IabResult result) {}
+        });
+
+        remove_ads_inapp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mHelper.launchPurchaseFlow(activity, ITEM_SKU_ADS, 10001, mPurchaseFinishedAdsListener, "inappremoveadspurchase");
+            }
+        });
+
+        unlock_moticons_inapp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mHelper.launchPurchaseFlow(activity, ITEM_SKU_MOTICONS, 10002, mPurchaseFinishedMoticonsListener, "inappunlockmoticonspurchase");
+            }
+        });
+
+    }
+
+    protected void setupHeyzapCallbacks() {
         HeyzapAds.OnStatusListener statusListener = new HeyzapAds.OnStatusListener() {
             @Override
             public void onShow(String s) {
@@ -246,6 +421,22 @@ public class MoticoinsActivity extends AppCompatActivity {
                 show_ad.setVisibility(View.VISIBLE);
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (!mHelper.handleActivityResult(requestCode, resultCode, data)) {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mHelper != null) {
+            mHelper.dispose();
+        }
+        mHelper = null;
     }
 
     @Override

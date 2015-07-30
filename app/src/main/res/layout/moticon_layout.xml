@@ -20,7 +20,7 @@
                 android:layout_marginTop="6dp"
                 android:background="@drawable/left"
                 android:textColor="@color/md_white_1000"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:layout_alignParentLeft="true" />
             <TextView
                 android:id="@+id/moticon_times"
@@ -29,7 +29,7 @@
                 android:layout_marginTop="6dp"
                 android:background="@drawable/right"
                 android:textColor="@color/md_white_1000"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:layout_alignParentRight="true" />
             <TextView
                 android:id="@+id/moticon_name"

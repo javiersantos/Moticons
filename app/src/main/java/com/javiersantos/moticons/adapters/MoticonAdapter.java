@@ -19,6 +19,7 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.javiersantos.moticons.Keys;
 import com.javiersantos.moticons.Moticon;
 import com.javiersantos.moticons.MoticonsApplication;
 import com.javiersantos.moticons.R;
@@ -162,7 +163,7 @@ public class MoticonAdapter extends RecyclerView.Adapter<MoticonAdapter.MoticonV
         if (!appPreferences.getRemovedAds()) {
             List<Integer> tempAdList = UtilsMoticons.retrieveAdMoticon(moticonList);
             if (tempAdList.contains(moticon.getId())) {
-                AdRequest adRequest = new AdRequest.Builder().addTestDevice(MoticonsApplication.getTestDevice()).build();
+                AdRequest adRequest = new AdRequest.Builder().addTestDevice(Keys.getTestDevice()).build();
 
                 moticonViewHolder.vAdRemove.setOnClickListener(new View.OnClickListener() {
                     @Override

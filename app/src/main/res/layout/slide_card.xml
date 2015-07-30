@@ -55,7 +55,7 @@
                     android:background="@drawable/left"
                     android:text="@string/action_funny"
                     android:textColor="@color/md_white_1000"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:layout_alignParentLeft="true" />
                 <TextView
                     android:id="@+id/slide_card_label"
@@ -66,7 +66,7 @@
                     android:background="@drawable/right"
                     android:textColor="@color/md_white_1000"
                     android:text="@string/slide_awesome"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:layout_alignParentRight="true" />
                 <TextView
                     android:id="@+id/slide_card_moticon"
@@ -77,7 +77,7 @@
                     android:shadowDx="-1"
                     android:shadowDy="-1"
                     android:shadowRadius="1"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true" />
                 <EditText

@@ -23,8 +23,4 @@ public class MoticonsApplication extends Application {
         return 40;
     }
 
-    public static String getTestDevice() {
-        return "1FD6637CCC5A1FF3544756CF60A5C035";
-    }
-
 }

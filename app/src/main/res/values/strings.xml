@@ -45,8 +45,8 @@
 
     <!-- Buttons -->
     <string name="button_unlock">Unlock now</string>
-    <string name="button_later">Maybe later</string>
-    <string name="button_moticoins_shop">Get some Moticoins</string>
+    <string name="button_later">Later</string>
+    <string name="button_moticoins_shop">Get Moticoins</string>
     <string name="button_exit">Exit</string>
     <string name="button_continue">Continue with the guide</string>
 
@@ -67,6 +67,7 @@
 
     <!-- Toasts and Snackbar -->
     <string name="tap_exit">Tap again to close the app</string>
-    <string name="snackbar_bought">You have unlocked this feature!</string>
+    <string name="snackbar_inapp_error">Something was wrong with the In-App Purchase. Please try again.</string>
+    <string name="snackbar_bought">Thanks! This feature has been successfully unlocked</string>
     <string name="snackbar_not_bought">You don\'t have enough Moticons to unlock this feature</string>
 </resources>

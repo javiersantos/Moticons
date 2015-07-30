@@ -27,7 +27,7 @@
     <string name="moticoins_ad_not_available">No hay vídeos en estos momentos. Por favor inténtalo luego.</string>
     <string name="admob_remove">Eliminar publicidad</string>
     <string name="moticoins_remove_ads">Eliminar publicidad</string>
-    <string name="moticoins_unlock_moticons">Desbloquear todos los Moticons</string>
+    <string name="moticoins_unlock_moticons">Conseguir Moticons</string>
     <string name="search">Buscar</string>
     <string name="search_hint">Buscar por palabras claves&#8230;</string>
     <string name="search_noresults">No hay resultados para esa búsqueda</string>
@@ -41,8 +41,8 @@
 
     <!-- Buttons -->
     <string name="button_unlock">Desbloquear ahora</string>
-    <string name="button_later">Quizás luego</string>
-    <string name="button_moticoins_shop">Conseguir algunos Moticoins</string>
+    <string name="button_later">Luego</string>
+    <string name="button_moticoins_shop">Conseguir Moticoins</string>
     <string name="button_exit">Salir</string>
     <string name="button_continue">Continuar con la introducción</string>
 
@@ -63,6 +63,7 @@
 
     <!-- Toasts and Snackbar -->
     <string name="tap_exit">Pulsa de nuevo para salir</string>
-    <string name="snackbar_bought">¡Acabas de desbloquearlo!</string>
+    <string name="snackbar_inapp_error">Algo fue mal con la compra In-App. Por favor inténtalo de nuevo.</string>
+    <string name="snackbar_bought">¡Gracias! ¡Acabas de desbloquearlo!</string>
     <string name="snackbar_not_bought">No tienes suficientes Moticoins para desbloquear la funcionalidad</string>
 </resources>
