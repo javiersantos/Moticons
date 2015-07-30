@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,7 +59,6 @@ public class MoticonAdapter extends RecyclerView.Adapter<MoticonAdapter.MoticonV
 
     @Override
     public void onBindViewHolder(final MoticonViewHolder moticonViewHolder, int i) {
-        Log.i("Position ", new Integer(i).toString());
         final Moticon moticon = moticonList.get(i);
         moticonViewHolder.vMoticonName.setText(moticon.getMoticon());
         moticonViewHolder.vMoticonCategory.setText(UtilsUI.convertCategoryToString(context, moticon));
