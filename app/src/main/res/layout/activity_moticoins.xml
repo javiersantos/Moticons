@@ -1,5 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <include
@@ -51,7 +52,6 @@
                 wheel:matProg_progressIndeterminate="true" />
             <LinearLayout
                 android:id="@+id/show_ad"
-                android:visibility="visible"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -70,6 +70,45 @@
                     android:layout_marginLeft="@dimen/card_description_horizontal_margin"
                     android:layout_marginRight="@dimen/card_description_horizontal_margin"
                     android:text="@string/moticoins_ad_description"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/card_googleplus"
+            android:layout_below="@id/moticoins_video"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_margin="5dp">
+            <com.pkmmte.view.CircularImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/googleplus"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="center_vertical"
+                app:border="true"
+                app:border_color="@color/divider"
+                app:border_width="4dp" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/card_horizontal_margin"
+                    android:text="@string/googleplus_share"
+                    android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/card_googleplus_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/card_description_horizontal_margin"
+                    android:layout_marginRight="@dimen/card_description_horizontal_margin"
+                    android:text="@string/googleplus_share_description"
                     android:textSize="14sp" />
             </LinearLayout>
         </android.support.v7.widget.CardView>

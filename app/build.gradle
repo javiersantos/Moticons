@@ -8,7 +8,7 @@ android {
         applicationId "com.javiersantos.moticons"
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 5
+        versionCode 6
         versionName "1.1"
     }
     buildTypes {

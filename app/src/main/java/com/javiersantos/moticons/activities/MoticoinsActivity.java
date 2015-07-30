@@ -3,6 +3,7 @@ package com.javiersantos.moticons.activities;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.plus.PlusShare;
 import com.heyzap.sdk.ads.HeyzapAds;
 import com.heyzap.sdk.ads.IncentivizedAd;
 import com.javiersantos.moticons.Keys;
@@ -27,12 +29,18 @@ import com.pnikosis.materialishprogress.ProgressWheel;
 
 public class MoticoinsActivity extends AppCompatActivity {
     private static final Integer MOTICOINS_VIDEO = 6;
+    private static final Integer MOTICOINS_GOOGLEPLUS = 10;
     private static final Integer MOTICOINS_REMOVE_ADS = 225;
     private static Integer MOTICOINS_UNLOCK_MOTICONS = UtilsMoticons.retrieveMoticoins(UtilsMoticons.loadMoticons());
     private static final String INAPP_REMOVE_ADS = "$1.43";
     private static final String INAPP_UNLOCK_MOTICONS = "$0.79";
     private static final String ITEM_SKU_ADS = "com.javiersantos.moticons.inappads";
     private static final String ITEM_SKU_MOTICONS = "com.javiersantos.moticons.inappmoticons";
+
+    // REQUEST CODE
+    private static final Integer GOOGLEPLUS_REQUEST_CODE = 0;
+    private static final Integer INAPP_ADS_REQUEST_CODE = 10001;
+    private static final Integer INAPP_MOTICONS_REQUEST_CODE = 10002;
 
     // MoticoinsActivity variables
     private AppPreferences appPreferences;
@@ -49,6 +57,10 @@ public class MoticoinsActivity extends AppCompatActivity {
     private ProgressWheel progressWheel;
     private LinearLayout show_ad;
     private TextView show_ad_description;
+
+    // GOOGLE PLUS
+    private CardView card_googleplus;
+    private TextView card_googleplus_description;
 
     // REMOVE ADS (MOTICOINS)
     private CardView remove_ads_moticoins;
@@ -77,6 +89,24 @@ public class MoticoinsActivity extends AppCompatActivity {
         initUI();
         initScreenElements();
         initInAppBilling();
+
+        if (appPreferences.getMoticoinsGooglePlus()) {
+            card_googleplus.setVisibility(View.GONE);
+        } else {
+            card_googleplus_description.setText(String.format(getResources().getString(R.string.googleplus_share_description), MOTICOINS_GOOGLEPLUS));
+            card_googleplus.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent shareIntent = new PlusShare.Builder(context)
+                            .setType("text/plain")
+                            .setText(getResources().getString(R.string.app_name) + ": " + getResources().getString(R.string.app_description))
+                            .setContentUrl(Uri.parse("https://play.google.com/store/apps/details?id=com.javiersantos.moticons"))
+                            .getIntent();
+
+                    startActivityForResult(shareIntent, GOOGLEPLUS_REQUEST_CODE);
+                }
+            });
+        }
 
         moticoins_amount.setText(appPreferences.getMoticoins().toString());
         moticoins_amount.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_stars_white, 0);
@@ -165,6 +195,10 @@ public class MoticoinsActivity extends AppCompatActivity {
         show_ad_description = (TextView) findViewById(R.id.show_ad_description);
         moticoins_amount = (TextView) findViewById(R.id.moticoins_amount);
         moticoins_video = (CardView) findViewById(R.id.moticoins_video);
+
+        // GOOGLE PLUS
+        card_googleplus = (CardView) findViewById(R.id.card_googleplus);
+        card_googleplus_description = (TextView) findViewById(R.id.card_googleplus_description);
 
         // REMOVE ADS (MOTICOINS)
         remove_ads_moticoins = (CardView) findViewById(R.id.remove_ads_moticoins);
@@ -314,14 +348,14 @@ public class MoticoinsActivity extends AppCompatActivity {
         remove_ads_inapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mHelper.launchPurchaseFlow(activity, ITEM_SKU_ADS, 10001, mPurchaseFinishedAdsListener, "inappremoveadspurchase");
+                mHelper.launchPurchaseFlow(activity, ITEM_SKU_ADS, INAPP_ADS_REQUEST_CODE, mPurchaseFinishedAdsListener, "inappremoveadspurchase");
             }
         });
 
         unlock_moticons_inapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mHelper.launchPurchaseFlow(activity, ITEM_SKU_MOTICONS, 10002, mPurchaseFinishedMoticonsListener, "inappunlockmoticonspurchase");
+                mHelper.launchPurchaseFlow(activity, ITEM_SKU_MOTICONS, INAPP_MOTICONS_REQUEST_CODE, mPurchaseFinishedMoticonsListener, "inappunlockmoticonspurchase");
             }
         });
 
@@ -412,7 +446,7 @@ public class MoticoinsActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if (available) {
-                    show_ad_description.setText(getResources().getString(R.string.moticoins_ad_description));
+                    show_ad_description.setText(String.format(getResources().getString(R.string.moticoins_ad_description), MOTICOINS_VIDEO));
                 } else {
                     show_ad_description.setText(getResources().getString(R.string.moticoins_ad_not_available));
                 }
@@ -428,6 +462,17 @@ public class MoticoinsActivity extends AppCompatActivity {
         if (!mHelper.handleActivityResult(requestCode, resultCode, data)) {
             super.onActivityResult(requestCode, resultCode, data);
         }
+
+        if (requestCode == GOOGLEPLUS_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                appPreferences.setMoticoinsGooglePlus(true);
+                card_googleplus.setVisibility(View.GONE);
+                appPreferences.setMoticoins(appPreferences.getMoticoins() + MOTICOINS_GOOGLEPLUS);
+                moticoins_amount.setText(appPreferences.getMoticoins().toString());
+                MainActivity.updateMoticoins(context);
+            }
+        }
+
     }
 
     @Override

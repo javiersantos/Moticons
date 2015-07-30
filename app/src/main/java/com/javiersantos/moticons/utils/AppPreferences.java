@@ -21,6 +21,7 @@ public class AppPreferences {
     public static final String KeyFirstRun = "prefFirstRun";
     public static final String KeyRemoveAds = "prefRemoveAds";
     public static final String KeyUnlockAllMoticons = "prefUnlockAllMoticons";
+    public static final String KeyMoticoinsGooglePlus = "prefMoticoinsGooglePlus";
     public static final String KeyMoticoins = "prefMoticoins";
     public static final String KeyMoticonTimes = "prefMoticonTimes";
     public static final String KeyMoticonFavorites = "prefMoticonFavorites";
@@ -71,6 +72,15 @@ public class AppPreferences {
 
     public void setMoticoins(Integer moticoins) {
         secureEditor.putInt(KeyMoticoins, moticoins);
+        secureEditor.commit();
+    }
+
+    public Boolean getMoticoinsGooglePlus() {
+        return secureSharedPreferences.getBoolean(KeyMoticoinsGooglePlus, false);
+    }
+
+    public void setMoticoinsGooglePlus(Boolean res) {
+        secureEditor.putBoolean(KeyMoticoinsGooglePlus, res);
         secureEditor.commit();
     }
 

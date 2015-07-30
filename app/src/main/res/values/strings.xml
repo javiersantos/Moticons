@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">Moticons</string>
     <string name="app_codename" translatable="false"></string>
-    <string name="app_description">Share Japanese Emoticons made easy</string>
+    <string name="app_description">A simple, easy and modern app to manage and use Japanese Emoticons with Material Design</string>
     <string name="moticoins" translatable="false">Moticoins</string>
     <string name="moticoins_value" translatable="false">%d Moticoins</string>
     <string name="moticon_no_moticoins" translatable="false">Ups&#8230; ⊙﹏⊙</string>
@@ -27,8 +27,10 @@
     <string name="moticon_unlocked_description">You\'re now allowed to use this Moticon where you want. The Moticon community will be proud of you!</string>
     <string name="moticon_no_moticoins_description">You don\'t have enough Moticoins to unlock this Moticon.</string>
     <string name="admob_remove">Remove ads</string>
+    <string name="googleplus_share">Share on Google+</string>
+    <string name="googleplus_share_description">Obtain %d Moticoins for free!</string>
     <string name="moticoins_ad">Watch a video</string>
-    <string name="moticoins_ad_description">Get 6 Moticoins to unlock Moticons and other features</string>
+    <string name="moticoins_ad_description">Get %d Moticoins to unlock Moticons and other features</string>
     <string name="moticoins_ad_not_available">There aren\'t videos at this time. Please try again later.</string>
     <string name="moticoins_remove_ads">Remove ads</string>
     <string name="moticoins_unlock_moticons">Unlock all Moticons</string>

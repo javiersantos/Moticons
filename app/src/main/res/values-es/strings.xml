@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_description">Comparte emoticones Japoneses sencillamente</string>
+    <string name="app_description">Una forma sencilla, rápida y moderna de enviar Moticons (emoticonos japoneses) con Material Design</string>
 
     <!-- Actions -->
     <string name="action_settings">Ajustes</string>
