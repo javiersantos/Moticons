@@ -6,7 +6,7 @@
         android:id="@+id/action_moticoins_icon"
         android:icon="@drawable/ic_stars_white"
         android:title="@string/moticoins"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_moticoins"
         android:title="@string/moticoins"
@@ -15,6 +15,6 @@
         android:id="@+id/action_search"
         android:icon="@android:drawable/ic_menu_search"
         android:title="@string/search"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         app:actionViewClass="android.support.v7.widget.SearchView" />
 </menu>
