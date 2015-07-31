@@ -78,7 +78,7 @@
             android:id="@+id/card_googleplus"
             android:layout_below="@id/moticoins_video"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="55dp"
             android:foreground="?android:attr/selectableItemBackground"
             android:layout_margin="5dp">
             <com.pkmmte.view.CircularImageView
@@ -152,7 +152,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/moticoins_remove_ads"
                             android:textSize="16sp"
-                            android:layout_marginLeft="@dimen/card_horizontal_margin"
+                            android:layout_marginLeft="14sp"
                             android:layout_marginRight="80sp"
                             android:layout_centerVertical="true" />
                     </RelativeLayout>
@@ -183,7 +183,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/moticoins_remove_ads"
                             android:textSize="16sp"
-                            android:layout_marginLeft="@dimen/card_horizontal_margin"
+                            android:layout_marginLeft="14sp"
                             android:layout_marginRight="80dp"
                             android:layout_centerVertical="true" />
                     </RelativeLayout>
@@ -223,7 +223,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/moticoins_unlock_moticons"
                             android:textSize="16sp"
-                            android:layout_marginLeft="@dimen/card_horizontal_margin"
+                            android:layout_marginLeft="14sp"
                             android:layout_marginRight="80dp"
                             android:layout_centerVertical="true" />
                     </RelativeLayout>
@@ -255,7 +255,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/moticoins_unlock_moticons"
                             android:textSize="16sp"
-                            android:layout_marginLeft="@dimen/card_horizontal_margin"
+                            android:layout_marginLeft="14sp"
                             android:layout_marginRight="80dp"
                             android:layout_centerVertical="true" />
                     </RelativeLayout>
