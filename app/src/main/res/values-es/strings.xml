@@ -56,6 +56,8 @@
     <string name="slide_4">¡Ya estás preparado para empezar!</string>
     <string name="slide_4_description">La comunidad Moticon te da la bienvenida. Hemos añadido %d Moticoins a tu perfil como regalo.\n\n¡Disfruta y no te olvides de usar los Moticoins para desbloquear nuevos Moticons!</string>
     <string name="slide_admob">Usando Moticons aceptas usar identificadores de dispositivo para personalizar el contenido y los anuncios. Además, compartimos estos identificadores y otra información sobre su dispositivo con Google AdSense.</string>
+    <string name="googleplus_share">Compartir en Google+</string>
+    <string name="googleplus_share_description">¡Y consigue %d Moticoins gratis!</string>
     <string name="slide_awesome">¡Genial!</string>
     <string name="slide_exit">¿Estás seguro?</string>
     <string name="slide_exit_description">Estás a un paso de cerrar la introducción para empezar a usar Moticons. Tenemos un regalo especial al final si lo terminas. ¿Quiéres continuar con la introducción?</string>
