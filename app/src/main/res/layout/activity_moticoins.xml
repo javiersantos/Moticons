@@ -88,6 +88,8 @@
                 android:src="@drawable/googleplus"
                 android:layout_marginLeft="16dp"
                 android:layout_marginStart="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
                 android:layout_gravity="center_vertical"
                 app:border="true"
                 app:border_color="@color/divider"
