@@ -60,6 +60,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/card_horizontal_margin"
+                    android:layout_marginStart="@dimen/card_horizontal_margin"
                     android:text="@string/moticoins_ad"
                     android:textSize="25sp" />
                 <TextView
@@ -85,7 +86,8 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/googleplus"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
                 android:layout_gravity="center_vertical"
                 app:border="true"
                 app:border_color="@color/divider"
@@ -93,21 +95,19 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:orientation="vertical">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/card_horizontal_margin"
                     android:text="@string/googleplus_share"
                     android:textSize="18sp" />
                 <TextView
                     android:id="@+id/card_googleplus_description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/card_description_horizontal_margin"
                     android:layout_marginRight="@dimen/card_description_horizontal_margin"
+                    android:layout_marginEnd="@dimen/card_description_horizontal_margin"
                     android:text="@string/googleplus_share_description"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -153,7 +153,9 @@
                             android:text="@string/moticoins_remove_ads"
                             android:textSize="16sp"
                             android:layout_marginLeft="14sp"
+                            android:layout_marginStart="14sp"
                             android:layout_marginRight="80sp"
+                            android:layout_marginEnd="80sp"
                             android:layout_centerVertical="true" />
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
@@ -184,7 +186,9 @@
                             android:text="@string/moticoins_remove_ads"
                             android:textSize="16sp"
                             android:layout_marginLeft="14sp"
-                            android:layout_marginRight="80dp"
+                            android:layout_marginStart="14sp"
+                            android:layout_marginRight="80sp"
+                            android:layout_marginEnd="80sp"
                             android:layout_centerVertical="true" />
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
@@ -224,7 +228,9 @@
                             android:text="@string/moticoins_unlock_moticons"
                             android:textSize="16sp"
                             android:layout_marginLeft="14sp"
-                            android:layout_marginRight="80dp"
+                            android:layout_marginStart="14sp"
+                            android:layout_marginRight="80sp"
+                            android:layout_marginEnd="80sp"
                             android:layout_centerVertical="true" />
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
@@ -256,7 +262,9 @@
                             android:text="@string/moticoins_unlock_moticons"
                             android:textSize="16sp"
                             android:layout_marginLeft="14sp"
-                            android:layout_marginRight="80dp"
+                            android:layout_marginStart="14sp"
+                            android:layout_marginRight="80sp"
+                            android:layout_marginEnd="80sp"
                             android:layout_centerVertical="true" />
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
