@@ -342,20 +342,36 @@ public class MoticoinsActivity extends AppCompatActivity {
 
         mHelper = new IabHelper(context, Keys.getBase64EncodedPublicKey());
         mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
-            public void onIabSetupFinished(IabResult result) {}
-        });
+            public void onIabSetupFinished(IabResult result) {
+                if (result.isSuccess()) {
+                    remove_ads_inapp.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            mHelper.launchPurchaseFlow(activity, ITEM_SKU_ADS, INAPP_ADS_REQUEST_CODE, mPurchaseFinishedAdsListener, "inappremoveadspurchase");
+                        }
+                    });
 
-        remove_ads_inapp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mHelper.launchPurchaseFlow(activity, ITEM_SKU_ADS, INAPP_ADS_REQUEST_CODE, mPurchaseFinishedAdsListener, "inappremoveadspurchase");
-            }
-        });
+                    unlock_moticons_inapp.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            mHelper.launchPurchaseFlow(activity, ITEM_SKU_MOTICONS, INAPP_MOTICONS_REQUEST_CODE, mPurchaseFinishedMoticonsListener, "inappunlockmoticonspurchase");
+                        }
+                    });
+                } else {
+                    remove_ads_inapp.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_inapp_error)).show();
+                        }
+                    });
 
-        unlock_moticons_inapp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mHelper.launchPurchaseFlow(activity, ITEM_SKU_MOTICONS, INAPP_MOTICONS_REQUEST_CODE, mPurchaseFinishedMoticonsListener, "inappunlockmoticonspurchase");
+                    unlock_moticons_inapp.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_inapp_error)).show();
+                        }
+                    });
+                }
             }
         });
 
@@ -459,10 +475,6 @@ public class MoticoinsActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (!mHelper.handleActivityResult(requestCode, resultCode, data)) {
-            super.onActivityResult(requestCode, resultCode, data);
-        }
-
         if (requestCode == GOOGLEPLUS_REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
                 appPreferences.setMoticoinsGooglePlus(true);
@@ -471,8 +483,9 @@ public class MoticoinsActivity extends AppCompatActivity {
                 moticoins_amount.setText(appPreferences.getMoticoins().toString());
                 MainActivity.updateMoticoins(context);
             }
+        } else if (!mHelper.handleActivityResult(requestCode, resultCode, data)) {
+            super.onActivityResult(requestCode, resultCode, data);
         }
-
     }
 
     @Override
