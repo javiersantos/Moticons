@@ -22,8 +22,6 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
-import java.util.Calendar;
-
 public class UtilsUI {
     public static Drawer showNavigationDrawer(final Context context, Toolbar toolbar, final MoticonAdapter moticonAdapter, final MoticonAdapter moticonPositiveAdapter, final MoticonAdapter moticonNegativeAdapter, final MoticonAdapter moticonFunnyAdapter, final MoticonAdapter moticonAnimalsAdapter, final MoticonAdapter moticonSpecialAdapter, final RecyclerView recyclerView) {
         Activity activity = (Activity) context;
@@ -80,16 +78,6 @@ public class UtilsUI {
                         return false;
                     }
                 }).build();
-    }
-
-    private static int getDayOrNight() {
-        int actualHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
-
-        if (actualHour >= 8 && actualHour < 19) {
-            return 1;
-        } else {
-            return 0;
-        }
     }
 
     public static String convertCategoryToString(Context context, Moticon moticon) {
