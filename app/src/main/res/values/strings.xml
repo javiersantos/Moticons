@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">Moticons</string>
     <string name="app_codename" translatable="false"></string>
-    <string name="app_description">A simple, easy and modern app to manage and use Japanese Emoticons with Material Design</string>
+    <string name="app_description">A simple, easy and modern app to use Japanese Emoticons with Material Design ʕ•̬͡•ʕ•̫͡•♥</string>
     <string name="moticoins" translatable="false">Moticoins</string>
     <string name="moticoins_value" translatable="false">%d Moticoins</string>
     <string name="moticon_no_moticoins" translatable="false">Ups&#8230; ⊙﹏⊙</string>
@@ -72,4 +72,5 @@
     <string name="snackbar_inapp_error">Something was wrong with the In-App Purchase. Please try again.</string>
     <string name="snackbar_bought">Thanks! This feature has been successfully unlocked</string>
     <string name="snackbar_not_bought">You don\'t have enough Moticons to unlock this feature</string>
+    <string name="snackbar_googleplay_outdated">Your Google Play Store version is outdated. Please update it before doing the In-App Purchase.</string>
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_description">Una forma sencilla, rápida y moderna de enviar Moticons (emoticonos japoneses) con Material Design</string>
+    <string name="app_description">Una forma sencilla, rápida y moderna de enviar emoticonos japoneses con Material Design ʕ•̬͡•ʕ•̫͡•♥</string>
 
     <!-- Actions -->
     <string name="action_settings">Ajustes</string>
@@ -68,4 +68,5 @@
     <string name="snackbar_inapp_error">Algo fue mal con la compra In-App. Por favor inténtalo de nuevo.</string>
     <string name="snackbar_bought">¡Gracias! ¡Acabas de desbloquearlo!</string>
     <string name="snackbar_not_bought">No tienes suficientes Moticoins para desbloquear la funcionalidad</string>
+    <string name="snackbar_googleplay_outdated">La versión de Google Play Store está desactualizada. Por favor actualízalo antes de realizar una compra In-App.</string>
 </resources>
