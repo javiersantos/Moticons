@@ -144,7 +144,7 @@ public class UtilsMoticons {
         moticons.add(new Moticon("ʕつ ͡◔ ᴥ ͡◔ʔつ", MoticonCategory.SPECIAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.BEAR)), 10));
         moticons.add(new Moticon("ʕ•̬͡•ʕ•̫͡•♥", MoticonCategory.SPECIAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.BEAR)), 10));
         moticons.add(new Moticon("ʕ•̫͡•ʔ❤ʕ•̫͡•ʔ", MoticonCategory.SPECIAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.BEAR)), 10));
-        moticons.add(new Moticon("(╯°□°）╯︵ ┻━┻", MoticonCategory.SPECIAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.TABLE_FLIP)), 10));
+        moticons.add(new Moticon("(╯°□°）╯ ┻━┻", MoticonCategory.SPECIAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.TABLE_FLIP)), 10));
         moticons.add(new Moticon("(☞◣д◢)☞", MoticonCategory.SPECIAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.CRAZY)), 10));
         moticons.add(new Moticon("┗(｀Дﾟ┗(｀ﾟДﾟ´)┛", MoticonCategory.SPECIAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.ANGRY)), 10));
         moticons.add(new Moticon(" ╚╚|░☀▄☀░|╝╝", MoticonCategory.SPECIAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.ANGRY)), 10));
