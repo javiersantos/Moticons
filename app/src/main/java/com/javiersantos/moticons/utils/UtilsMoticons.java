@@ -135,6 +135,8 @@ public class UtilsMoticons {
         moticons.add(new Moticon("ˏ₍•ɞ•₎ˎ", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.BIRD))));
         moticons.add(new Moticon("꜀( ˊ̠˂˃ˋ̠ )꜆", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.BIRD))));
 
+        moticons.add(new Moticon("ʕ•ᴥ•ʔ", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.BEAR))));
+
         moticons.add(new Moticon("@(o･ｪ･)@", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.MONKEY))));
         moticons.add(new Moticon("└@(･ｪ･)@┐”", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.MONKEY))));
         moticons.add(new Moticon("@(o･ｪ･o)@", MoticonCategory.ANIMAL, new ArrayList<>(Collections.singletonList(MoticonKeywords.MONKEY))));
