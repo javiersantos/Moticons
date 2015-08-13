@@ -265,9 +265,7 @@ public class MoticoinsActivity extends AppCompatActivity {
         final IabHelper.OnConsumeFinishedListener mConsumeFinishedListener = new IabHelper.OnConsumeFinishedListener() {
             @Override
             public void onConsumeFinished(Purchase purchase, IabResult result) {
-                if (result.isFailure()) {
-                    UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_inapp_error)).show();
-                } else {
+                if (result.isSuccess()) {
                     switch (purchase.getSku()) {
                         case ITEM_SKU_ADS:
                             appPreferences.setRemoveAds(true);
@@ -280,6 +278,8 @@ public class MoticoinsActivity extends AppCompatActivity {
                             UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_bought)).show();
                             break;
                     }
+                } else {
+                    UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_inapp_error)).show();
                 }
             }
         };
@@ -290,13 +290,7 @@ public class MoticoinsActivity extends AppCompatActivity {
                 if (result.isFailure()) {
                     UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_inapp_error)).show();
                 } else {
-                    if (inventory.hasPurchase(ITEM_SKU_ADS)) {
-                        UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_bought)).show();
-                        appPreferences.setRemoveAds(true);
-                        updateScreenElements(1, true);
-                    } else {
-                        mHelper.consumeAsync(inventory.getPurchase(ITEM_SKU_ADS), mConsumeFinishedListener);
-                    }
+                    mHelper.consumeAsync(inventory.getPurchase(ITEM_SKU_ADS), mConsumeFinishedListener);
                 }
             }
         };
@@ -307,31 +301,41 @@ public class MoticoinsActivity extends AppCompatActivity {
                 if (result.isFailure()) {
                     UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_inapp_error)).show();
                 } else {
-                    if (inventory.hasPurchase(ITEM_SKU_MOTICONS)) {
-                        UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_bought)).show();
-                        appPreferences.setUnlockAllMoticons(true);
-                        updateScreenElements(2, true);
-                    } else {
-                        mHelper.consumeAsync(inventory.getPurchase(ITEM_SKU_MOTICONS), mConsumeFinishedListener);
-                    }
+                    mHelper.consumeAsync(inventory.getPurchase(ITEM_SKU_MOTICONS), mConsumeFinishedListener);
                 }
             }
         };
 
-        final IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener = new IabHelper.OnIabPurchaseFinishedListener() {
+        final IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedAdsListener = new IabHelper.OnIabPurchaseFinishedListener() {
             @Override
             public void onIabPurchaseFinished(IabResult result, Purchase purchase) {
                 if (result.isFailure()) {
-                    UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_inapp_error)).show();
-                } else {
-                    switch (purchase.getSku()) {
-                        case ITEM_SKU_ADS:
-                            mHelper.queryInventoryAsync(mReceivedInventoryAdsListener);
-                            break;
-                        case ITEM_SKU_MOTICONS:
-                            mHelper.queryInventoryAsync(mReceivedInventoryMoticonsListener);
-                            break;
+                    if (result.getResponse() == 7) {
+                        UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_bought)).show();
+                        appPreferences.setRemoveAds(true);
+                        updateScreenElements(1, true);
+                    } else {
+                        UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_inapp_error)).show();
                     }
+                } else {
+                    mHelper.queryInventoryAsync(mReceivedInventoryAdsListener);
+                }
+            }
+        };
+
+        final IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedMoticonsListener = new IabHelper.OnIabPurchaseFinishedListener() {
+            @Override
+            public void onIabPurchaseFinished(IabResult result, Purchase purchase) {
+                if (result.isFailure()) {
+                    if (result.getResponse() == 7) {
+                        UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_bought)).show();
+                        appPreferences.setUnlockAllMoticons(true);
+                        updateScreenElements(2, true);
+                    } else {
+                        UtilsDialog.showSnackbar(activity, getResources().getString(R.string.snackbar_inapp_error)).show();
+                    }
+                } else {
+                    mHelper.queryInventoryAsync(mReceivedInventoryMoticonsListener);
                 }
             }
         };
@@ -343,14 +347,14 @@ public class MoticoinsActivity extends AppCompatActivity {
                     remove_ads_inapp.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            mHelper.launchPurchaseFlow(activity, ITEM_SKU_ADS, INAPP_ADS_REQUEST_CODE, mPurchaseFinishedListener, "inappremoveadspurchase");
+                            mHelper.launchPurchaseFlow(activity, ITEM_SKU_ADS, INAPP_ADS_REQUEST_CODE, mPurchaseFinishedAdsListener, "inappremoveadspurchase");
                         }
                     });
 
                     unlock_moticons_inapp.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            mHelper.launchPurchaseFlow(activity, ITEM_SKU_MOTICONS, INAPP_MOTICONS_REQUEST_CODE, mPurchaseFinishedListener, "inappunlockmoticonspurchase");
+                            mHelper.launchPurchaseFlow(activity, ITEM_SKU_MOTICONS, INAPP_MOTICONS_REQUEST_CODE, mPurchaseFinishedMoticonsListener, "inappunlockmoticonspurchase");
                         }
                     });
                 } else {
