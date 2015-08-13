@@ -8,8 +8,8 @@ android {
         applicationId "com.javiersantos.moticons"
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 8
-        versionName "1.1.1"
+        versionCode 9
+        versionName "1.1.2"
     }
     buildTypes {
         release {
@@ -27,7 +27,6 @@ dependencies {
     compile 'com.android.support:cardview-v7:22.2.1'
     compile 'com.android.support:design:22.2.1'
     compile 'com.google.android.gms:play-services:7.5.0'
-    compile 'com.getbase:floatingactionbutton:1.9.1'
     compile 'com.scottyab:secure-preferences-lib:0.1.1'
     compile 'xyz.danoz:recyclerviewfastscroller:0.1.3'
     compile 'com.pnikosis:materialish-progress:1.5'
