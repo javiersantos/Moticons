@@ -8,7 +8,7 @@ android {
         applicationId "com.javiersantos.moticons"
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 9
+        versionCode 10
         versionName "1.1.2"
     }
     buildTypes {
@@ -21,12 +21,12 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile files('libs/heyzap-ads-sdk.jar')
+    compile files('libs/heyzap-ads-sdk-9.0.6.jar')
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'com.android.support:recyclerview-v7:22.2.1'
     compile 'com.android.support:cardview-v7:22.2.1'
     compile 'com.android.support:design:22.2.1'
-    compile 'com.google.android.gms:play-services:7.5.0'
+    compile 'com.google.android.gms:play-services:7.8.0'
     compile 'com.scottyab:secure-preferences-lib:0.1.1'
     compile 'xyz.danoz:recyclerviewfastscroller:0.1.3'
     compile 'com.pnikosis:materialish-progress:1.5'
