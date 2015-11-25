@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">Moticons is a simple, easy and modern app to manage and use Japanese Emoticons.</p>
-<p align="center"><a href="https://plus.google.com/communities/109365480442398855300">Community on Google+</a>
+<p align="center"><a href="https://plus.google.com/communities/109365480442398855300">Community on Google+</a> | <a href="https://www.paypal.me/javiersantos">Donate</a></p>
 
 ### Features
 * Use and share more than 100 Moticons.
