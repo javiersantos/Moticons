@@ -21,6 +21,16 @@
 
 ![Moticons](https://raw.githubusercontent.com/javiersantos/Moticons/master/Screenshots/header.png)
 
+## Creating your Moticons
+All developers are welcome to use the source code to create derivate applications. There are several things I require from all developers for the moment.
+
+1. Please do not use the name Moticons for your app.
+2. Kindly do not use the standard logo as your app's logo.
+3. Please remember to read and follow the [GPL v3 license](https://github.com/javiersantos/Moticons/blob/master/LICENSE). Your derivate work must include this license.
+4. Customize [Keys.java](https://github.com/javiersantos/Moticons/blob/master/app/src/main/java/com/javiersantos/moticons/Keys.java) with your own Public Keys.
+
+I ask that you do not redistribute this application for your own gain though. If you make a build and want to share it with people, that is great, that is what this should be for. Do not charge them for that build though. I have spent months creating this project and this is what I ask if you choose to make it for yourself.
+
 ## Third Party Libraries
 * [Secure Preferences](https://github.com/scottyab/secure-preferences)
 * [Materialish Progress](https://github.com/pnikosis/materialish-progress)
