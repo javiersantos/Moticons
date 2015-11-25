@@ -160,6 +160,8 @@ public class MoticonAdapter extends RecyclerView.Adapter<MoticonAdapter.MoticonV
     }
 
     private void includeAdmob(final MoticonViewHolder moticonViewHolder, Moticon moticon) {
+        moticonViewHolder.vAd.setAdUnitId(Keys.getAdMobUnitID());
+
         if (!appPreferences.getRemovedAds()) {
             List<Integer> tempAdList = UtilsMoticons.retrieveAdMoticon(moticonList);
             if (tempAdList.contains(moticon.getId())) {

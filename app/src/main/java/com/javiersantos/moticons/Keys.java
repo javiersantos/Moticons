@@ -9,6 +9,10 @@ public class Keys {
         return "<IAP_PURCHASE_PUBLIC_KEY>";
     }
 
+    public static String getAdMobUnitID() {
+        return "<ADMOB_UNIT_ID>";
+    }
+
     public static String getHeyZapPublicKey() {
         return "<HEYZAP_PUBLIC_KEY>";
     }
