@@ -1,6 +1,11 @@
-# Moticons [![Build Status](https://travis-ci.org/javiersantos/Moticons.svg?branch=master)](https://travis-ci.org/javiersantos/Moticons)
+<h1 align="center">Moticons</h1>
 
-Moticons is a simple, easy and modern app to manage and use Japanese Emoticons.
+<p align="center">
+  <a target="_blank" href="https://travis-ci.org/javiersantos/Moticons"><img src="https://travis-ci.org/javiersantos/Moticons.svg?branch=master"></a>
+</p>
+
+<p align="center">Moticons is a simple, easy and modern app to manage and use Japanese Emoticons.</p>
+<p align="center"><a href="https://plus.google.com/communities/109365480442398855300">Community on Google+</a>
 
 ### Features
 * Use and share more than 100 Moticons.
