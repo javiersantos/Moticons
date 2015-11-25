@@ -17,6 +17,12 @@ Moticons is a simple, easy and modern app to manage and use Japanese Emoticons.
 ![Moticons](https://raw.githubusercontent.com/javiersantos/Moticons/master/Screenshots/header.png)
 
 ## Third Party Libraries
+* [Secure Preferences](https://github.com/scottyab/secure-preferences)
+* [Materialish Progress](https://github.com/pnikosis/materialish-progress)
+* [Material Drawer](https://github.com/mikepenz/MaterialDrawer)
+* [AppIntro](https://github.com/PaoloRotolo/AppIntro)
+* [CircularImageView](https://github.com/Pkmmte/CircularImageView)
+* [RecyclerViewFastScroller](https://github.com/danoz73/RecyclerViewFastScroller)
 
 ## License
 
