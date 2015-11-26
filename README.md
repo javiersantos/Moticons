@@ -6,7 +6,7 @@
 
 <p align="center"><img src="https://github.com/javiersantos/Moticons/blob/master/app/src/main/ic_launcher-web.png" width="100" height="100"></p>
 <p align="center">Moticons is a simple, easy and modern app to manage and use Japanese Emoticons.</p>
-<p align="center"><a href="https://plus.google.com/communities/109365480442398855300">Community on Google+</a> | <a href="https://www.paypal.me/javiersantos">Donate</a></p>
+<p align="center"><a href="https://plus.google.com/communities/109365480442398855300">Community on Google+</a> | <a href="https://www.paypal.me/javiersantos">Donate</a> | <a href="https://www.patreon.com/javiersantos">Patreon</a></p>
 
 ### Features
 * Use and share more than 100 Moticons.
