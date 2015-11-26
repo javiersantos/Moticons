@@ -2,11 +2,13 @@
 
 <p align="center">
   <a target="_blank" href="https://travis-ci.org/javiersantos/Moticons"><img src="https://travis-ci.org/javiersantos/Moticons.svg?branch=master"></a>
+  <span class="badge-paypal"><a href="https://www.paypal.me/javiersantos" title="Donate using PayPal"><img src="https://img.shields.io/badge/paypal-donate-yellow.svg" /></a></span>
+  <span class="badge-patreon"><a href="http://patreon.com/javiersantos" title="Donate using Patreon"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" /></a></span>
 </p>
 
 <p align="center"><img src="https://github.com/javiersantos/Moticons/blob/master/app/src/main/ic_launcher-web.png" width="100" height="100"></p>
 <p align="center">Moticons is a simple, easy and modern app to manage and use Japanese Emoticons.</p>
-<p align="center"><a href="https://plus.google.com/communities/109365480442398855300">Community on Google+</a> | <a href="https://www.paypal.me/javiersantos">Donate</a> | <a href="https://www.patreon.com/javiersantos">Patreon</a></p>
+<p align="center"><a href="https://plus.google.com/communities/109365480442398855300">Community on Google+</a></p>
 
 ### Features
 * Use and share more than 100 Moticons.
