@@ -1,3 +1,5 @@
+[![Android Gems](http://www.android-gems.com/badge/javiersantos/Moticons.svg?branch=master)](http://www.android-gems.com/lib/javiersantos/Moticons)
+
 <h1 align="center">Moticons</h1>
 
 <p align="center">
