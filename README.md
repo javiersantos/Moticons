@@ -9,7 +9,7 @@
 
 <p align="center"><img src="https://github.com/javiersantos/Moticons/blob/master/app/src/main/ic_launcher-web.png" width="100" height="100"></p>
 <p align="center">Moticons is a simple, easy and modern app to manage and use Japanese Emoticons.</p>
-<p align="center"><a target="_blank" href="https://play.google.com/store/apps/details?id=com.javiersantos.moticons"><img src="http://developer.android.com/images/brand/en_app_rgb_wo_60.png"></a></p>
+<p align="center"><a target="_blank" href="https://play.google.com/store/apps/details?id=com.javiersantos.moticons"><img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="59" width="170"></a></p>
 
 ### Features
 * Use and share more than 100 Moticons.
