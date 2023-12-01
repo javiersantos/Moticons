@@ -3,12 +3,10 @@
 <p align="center">
   <a target="_blank" href="https://travis-ci.org/javiersantos/Moticons"><img src="https://travis-ci.org/javiersantos/Moticons.svg?branch=master"></a>
   <a target="_blank" href="http://android-arsenal.com/details/3/2853"><img src="https://img.shields.io/badge/Android%20Arsenal-Moticons-blue.svg"></a>
-  <a target="_blank" href="https://www.paypal.me/javiersantos" title="Donate using PayPal"><img src="https://img.shields.io/badge/paypal-donate-yellow.svg" /></a>
 </p>
 
 <p align="center"><img src="https://github.com/javiersantos/Moticons/blob/master/app/src/main/ic_launcher-web.png" width="100" height="100"></p>
 <p align="center">Moticons is a simple, easy and modern app to manage and use Japanese Emoticons.</p>
-<p align="center"><a target="_blank" href="https://play.google.com/store/apps/details?id=com.javiersantos.moticons"><img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="59" width="170"></a></p>
 
 ### Features
 * Use and share more than 100 Moticons.
@@ -19,7 +17,6 @@
 * Material Design.
 
 ## APK Download
-* [Download on Google Play](https://play.google.com/store/apps/details?id=com.javiersantos.moticons) - Recommended -
 * [Download on GitHub](https://github.com/javiersantos/Moticons/releases)
 
 ![Moticons](https://raw.githubusercontent.com/javiersantos/Moticons/master/Screenshots/header.png)
